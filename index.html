@@ -37,22 +37,35 @@
 <body class="antialiased">
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-[#1F3327]/10 bg-[#EAF3E1]/90 backdrop-blur">
-  <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <span class="font-display text-lg tracking-tight">Digital&nbsp;Agriculture</span>
-      <span class="font-mono text-[11px] text-[#1F3327]/50 hidden sm:inline">PH · OPC</span>
-    </div>
-    <nav class="hidden md:flex items-center gap-8 text-sm">
+  <div class="relative max-w-6xl mx-auto px-6 md:px-10 h-24 flex flex-col items-center justify-center gap-1">
+    <span class="font-display text-3xl md:text-4xl tracking-tight">Digital Agri Philippines</span>
+    <nav class="hidden md:flex items-center gap-8 text-sm mt-1">
       <a href="#work" class="hover:text-[#4C6B47] transition-colors">What we do</a>
       <a href="#crops" class="hover:text-[#4C6B47] transition-colors">Focus areas</a>
       <a href="#livestock" class="hover:text-[#4C6B47] transition-colors">Livestock &amp; farmers</a>
       <a href="#innovations" class="hover:text-[#4C6B47] transition-colors">Innovations</a>
       <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors">Pitch an idea</a>
     </nav>
+
+    <details class="group absolute right-6 md:right-10 top-1/2 -translate-y-1/2">
+      <summary class="list-none cursor-pointer flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#1F3327]/20 text-xs font-mono uppercase tracking-wide hover:border-[#1F3327]/50 transition-colors select-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>Language</span>
+      </summary>
+      <div class="absolute right-0 mt-2 w-48 rounded-xl border border-[#1F3327]/12 bg-[#EAF3E1] shadow-lg py-2 text-sm font-sans normal-case">
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">English</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Tagalog</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Bisaya</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Ilokano</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Batangueño</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Ilonggo</a>
+        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Kapampangan</a>
+      </div>
+    </details>
   </div>
 </header>
 
-<section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+<section class="relative pt-44 pb-24 md:pt-52 md:pb-32 overflow-hidden">
   <div class="absolute inset-0 contour pointer-events-none" aria-hidden="true">
     <svg viewBox="0 0 1400 700" class="w-full h-full opacity-70" preserveAspectRatio="none">
       <path d="M-50,560 C 200,540 340,600 520,560 S 900,480 1100,540 1250,580 1450,540" />
