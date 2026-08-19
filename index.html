@@ -33,13 +33,83 @@
   .pillar-card:hover{transform:translateY(-3px);}
   a:focus-visible, button:focus-visible{outline:2px solid var(--irrigation); outline-offset:3px;}
   .lang-option[aria-current="true"]{background:#DCEACB; font-weight:600;}
+
+  /* --- Dark mode --- */
+  body.dark-mode{
+    --cream:#0D1711;
+    --mud:#EAF3E1;
+    --paddy:#7DBA70;
+    --irrigation:#76B7D2;
+    --husk:#233D2A;
+    background:#0D1711;
+    color:#EAF3E1;
+  }
+  body.dark-mode header{background:rgba(13,23,17,.92)!important; border-color:rgba(234,243,225,.12)!important;}
+  body.dark-mode header a, body.dark-mode header span, body.dark-mode header summary{color:#EAF3E1!important;}
+  body.dark-mode section.bg-white\/40, body.dark-mode section.bg-white\/50,
+  body.dark-mode .bg-white, body.dark-mode [class*="bg-white/"],
+  body.dark-mode #qosko-dashboard{background:#122018!important;}
+  body.dark-mode .bg-\[\#DCEACB\], body.dark-mode footer{background:#172A1C!important;}
+  body.dark-mode .bg-\[\#CFE3C2\]\/50, body.dark-mode .bg-\[\#CFE3C2\]\/40{background:#1B3322!important;}
+  body.dark-mode [class*="border-[#1F3327]"]{border-color:rgba(234,243,225,.14)!important;}
+  body.dark-mode [class*="text-[#1F3327]"]{color:#EAF3E1!important;}
+  body.dark-mode [class*="text-[#EAF3E1]"]{color:#EAF3E1!important;}
+  body.dark-mode input, body.dark-mode textarea{background:rgba(234,243,225,.06)!important; color:#EAF3E1!important; border-color:rgba(234,243,225,.18)!important;}
+  body.dark-mode .lang-option:hover, body.dark-mode .lang-option[aria-current="true"]{background:#233D2A!important;}
+  body.dark-mode .dark-toggle{border-color:rgba(234,243,225,.22); background:#16271A; color:#EAF3E1;}
+
+  /* --- Header branding --- */
+  .brand-wrap{display:flex;align-items:center;gap:.7rem;line-height:1;}
+  .brand-mark{width:38px;height:38px;flex:0 0 auto;filter:drop-shadow(0 4px 8px rgba(31,51,39,.12));}
+  .brand-name{font-size:clamp(2rem,4vw,3.2rem);font-weight:600;letter-spacing:-.035em;}
+
+  /* --- Dark-mode button --- */
+  .dark-toggle{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;width:42px;height:42px;border:1px solid rgba(31,51,39,.18);border-radius:999px;background:rgba(255,255,255,.45);color:#1F3327;cursor:pointer;transition:.25s ease;}
+  .dark-toggle:hover{transform:translateY(-2px);border-color:#4C6B47;}
+  .dark-toggle svg{width:18px;height:18px;}
+
+  /* --- Floating agricultural decoration --- */
+  .agri-decor{position:absolute;z-index:1;pointer-events:none;user-select:none;}
+  .agri-float{animation:agriFloat 5s ease-in-out infinite;}
+  .agri-float.delay-1{animation-delay:1.2s}.agri-float.delay-2{animation-delay:2.2s}.agri-float.delay-3{animation-delay:3.1s}
+  @keyframes agriFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(3deg)}}
+  .agri-bubble{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:18px;background:rgba(255,255,255,.76);border:1px solid rgba(76,107,71,.18);box-shadow:0 14px 35px rgba(31,51,39,.10);backdrop-filter:blur(8px);}
+  .agri-bubble svg{width:28px;height:28px;color:#4C6B47;}
+  body.dark-mode .agri-bubble{background:rgba(24,46,29,.82);border-color:rgba(234,243,225,.14);}
+
+  /* --- Floating AI Agent --- */
+  .ai-agent{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;align-items:flex-end;gap:10px;}
+  .ai-agent-button{width:62px;height:62px;border:0;border-radius:50%;background:#1F7A35;color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 35px rgba(31,122,53,.34);transition:transform .25s ease, box-shadow .25s ease;}
+  .ai-agent-button:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 18px 42px rgba(31,122,53,.42);}
+  .ai-agent-button svg{width:29px;height:29px;}
+  .ai-agent-label{background:#fff;color:#1F3327;border:1px solid rgba(31,51,39,.12);padding:9px 12px;border-radius:14px 14px 4px 14px;font-size:12px;font-weight:600;box-shadow:0 10px 28px rgba(31,51,39,.12);white-space:nowrap;opacity:0;transform:translateY(8px);pointer-events:none;transition:.25s ease;}
+  .ai-agent:hover .ai-agent-label{opacity:1;transform:translateY(0);}
+  body.dark-mode .ai-agent-label{background:#172A1C;color:#EAF3E1;border-color:rgba(234,243,225,.14);}
+  .ai-chat-panel{position:fixed;right:22px;bottom:96px;width:min(360px,calc(100vw - 32px));background:#fff;border:1px solid rgba(31,51,39,.12);border-radius:22px;box-shadow:0 25px 70px rgba(20,40,25,.22);padding:18px;z-index:101;display:none;}
+  .ai-chat-panel.open{display:block;animation:chatPop .22s ease-out;}
+  @keyframes chatPop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+  body.dark-mode .ai-chat-panel{background:#122018;color:#EAF3E1;border-color:rgba(234,243,225,.14);}
+  .ai-chat-close{border:0;background:transparent;cursor:pointer;font-size:18px;color:inherit;}
+  @media(max-width:768px){
+    .brand-mark{width:32px;height:32px}.brand-name{font-size:clamp(1.65rem,7vw,2.2rem)}
+    .ai-agent{right:14px;bottom:14px}.ai-agent-button{width:56px;height:56px}.ai-agent-label{display:none}
+    .agri-decor{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){.agri-float{animation:none}.ai-agent-button{transition:none}}
 </style>
 </head>
 <body class="antialiased">
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-[#1F3327]/10 bg-[#EAF3E1]/90 backdrop-blur">
   <div class="relative max-w-6xl mx-auto px-6 md:px-10 h-24 flex flex-col items-center justify-center gap-1">
-    <span class="font-display text-3xl md:text-4xl tracking-tight">Digital Agri Philippines</span>
+    <div class="brand-wrap">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M10 35c8-9 15-16 28-22-1 13-8 23-21 24-3 .2-5.2-.5-7-2Z" fill="#1F7A35"/>
+        <path d="M12 38c6-9 13-14 23-18" stroke="#EAF3E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M7 39h34" stroke="#C99A3D" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="font-display brand-name tracking-tight">Digital Agri Philippines</span>
+    </div>
     <nav class="hidden md:flex items-center gap-8 text-sm mt-1">
       <a href="#work" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_work">What we do</a>
       <a href="#crops" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_crops">Focus areas</a>
@@ -48,7 +118,13 @@
       <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors" data-i18n="nav_pitch">Pitch an idea</a>
     </nav>
 
-    <details id="langMenu" class="group absolute right-6 md:right-10 top-1/2 -translate-y-1/2">
+    <div class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 flex items-center gap-2">
+      <button id="darkModeToggle" class="dark-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="darkModeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/>
+        </svg>
+      </button>
+      <details id="langMenu" class="group relative">
       <summary class="list-none cursor-pointer flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#1F3327]/20 text-xs font-mono uppercase tracking-wide hover:border-[#1F3327]/50 transition-colors select-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         <span data-i18n="lang_label">Language</span>
@@ -62,11 +138,21 @@
         <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="hil">Ilonggo</a>
         <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="pam">Kapampangan</a>
       </div>
-    </details>
+      </details>
+    </div>
   </div>
 </header>
 
 <section class="relative pt-44 pb-24 md:pt-52 md:pb-32 overflow-hidden">
+  <div class="agri-decor agri-float" style="right:7%;top:18%;">
+    <div class="agri-bubble" title="Agriculture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V10"/><path d="M12 14c-5 0-8-2.5-8-7 5 0 8 2.5 8 7Z"/><path d="M12 11c0-4.5 3-7 8-7 0 4.5-3 7-8 7Z"/></svg></div>
+  </div>
+  <div class="agri-decor agri-float delay-1" style="right:19%;top:31%;">
+    <div class="agri-bubble" title="Farm animal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 14c0-4 3-6 7-6h4c2 0 3 2 3 5v3H7c-1.2 0-2-1-2-2Z"/><path d="M7 16v3M16 16v3M19 11l2-2M4 11 2 9"/></svg></div>
+  </div>
+  <div class="agri-decor agri-float delay-2" style="left:5%;bottom:14%;">
+    <div class="agri-bubble" title="Harvest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V4"/><path d="M12 9c-3.5 0-6-2-6-5 3.5 0 6 2 6 5ZM12 14c3.5 0 6-2 6-5-3.5 0-6 2-6 5Z"/></svg></div>
+  </div>
   <div class="absolute inset-0 contour pointer-events-none" aria-hidden="true">
     <svg viewBox="0 0 1400 700" class="w-full h-full opacity-70" preserveAspectRatio="none">
       <path d="M-50,560 C 200,540 340,600 520,560 S 900,480 1100,540 1250,580 1450,540" />
@@ -269,9 +355,9 @@
       <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4" data-i18n="pitch_eyebrow">Pitch an idea</p>
       <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6" data-i18n="pitch_title">Got a solution farmers actually need?</h2>
       <p class="text-[#EAF3E1]/75 leading-relaxed max-w-md" data-i18n="pitch_desc">We work with founders, researchers, and agri-tech students who have a working idea — a sensor, a model, a distribution channel — and want to test it with real cooperatives instead of a lab.</p>
-      <p class="text-[#EAF3E1]/50 text-sm mt-8" data-i18n-html="pitch_email_note_html">Prefer email? Write to <a href="mailto:digitalagriphil@gmail.com" class="underline hover:text-[#C99A3D]">digitalagriphil@gmail.com</a></p>
+      <p class="text-[#EAF3E1]/50 text-sm mt-8" data-i18n-html="pitch_email_note_html">Prefer email? Write to <a href="mailto:pitch@digitalagri.ph" class="underline hover:text-[#C99A3D]">pitch@digitalagri.ph</a></p>
     </div>
-    <form action="mailto:digitalagriphil@gmail.com" method="post" enctype="text/plain" class="flex flex-col gap-4">
+    <form action="mailto:pitch@digitalagri.ph" method="post" enctype="text/plain" class="flex flex-col gap-4">
       <div>
         <label for="pitch-name" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_name_label">Name</label>
         <input id="pitch-name" name="name" type="text" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="Juan Dela Cruz" data-i18n-placeholder="pitch_name_ph">
@@ -308,6 +394,29 @@
     <p data-i18n="footer_reg">Registered One Person Corporation · Republic of the Philippines</p>
   </div>
 </footer>
+
+<!-- Floating AI Agent -->
+<div id="aiChatPanel" class="ai-chat-panel" aria-hidden="true">
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#4C6B47]">QOSKO AI AGENT</p>
+      <h3 class="font-display text-2xl mt-1">How can I help?</h3>
+    </div>
+    <button id="aiChatClose" class="ai-chat-close" type="button" aria-label="Close AI Agent">×</button>
+  </div>
+  <p class="mt-3 text-sm opacity-75 leading-relaxed">Ask about the QOSKO Digital Agri PH dashboard, livestock records, farmer registration, or the Digital Agri Philippines platform.</p>
+  <div class="mt-4 rounded-xl border border-[#1F3327]/10 p-3 text-sm bg-[#EAF3E1]/50">AI Agent interface ready — connect your preferred AI service here.</div>
+</div>
+<div class="ai-agent" aria-label="AI Agent">
+  <div class="ai-agent-label">Ask QOSKO AI</div>
+  <button id="aiChatButton" class="ai-agent-button" type="button" aria-label="Open QOSKO AI Agent" aria-expanded="false" title="QOSKO AI Agent">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-4 2v-4.2A7.5 7.5 0 1 1 20 11.5Z"/>
+      <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/>
+      <path d="M18.2 3.8v3M16.7 5.3h3"/>
+    </svg>
+  </button>
+</div>
 
 <script>
 const translations = {
@@ -346,7 +455,7 @@ const translations = {
     innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
     pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
     pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
-    pitch_email_note_html: "Mas gusto ang email? Sumulat sa <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Mas gusto ang email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Iyong ideya",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
     contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
@@ -388,7 +497,7 @@ const translations = {
     innov4_tag: "Pilot pa", innov4_title: "Tambag pinaagi sa tingog", innov4_desc: "Usa ka call-in line para sa mag-uuma nga walay smartphone — pangutana sa Filipino o lokal nga diyalekto, ug makadawat og tubag base sa tinuod nga datos sa uma.",
     pitch_eyebrow: "Isugyot ang ideya", pitch_title: "Naa ka bay solusyon nga tinuod nga gikinahanglan sa mag-uuma?",
     pitch_desc: "Nagatrabaho kami uban sa mga founder, researcher, ug estudyante sa agri-tech nga adunay nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — ug gusto kining sulayan uban sa tinuod nga kooperatiba imbes sa laboratoryo.",
-    pitch_email_note_html: "Gusto mo og email? Sulat sa <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Gusto mo og email? Sulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imong ideya",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Unsang problema ang gisulbad niini, ug para kang kinsa nga mag-uuma?", pitch_submit: "Ipadala ang sugyot",
     contact_title: "Nagatrabaho ka ba uban sa kooperatiba, LGU, ukon agribusiness?",
@@ -430,7 +539,7 @@ const translations = {
     innov4_tag: "Piloto pay laeng", innov4_title: "Balakad babaen iti timek", innov4_desc: "Maysa a call-in line para kadagiti mannalon nga awan smartphone-na — agsaludsod iti Filipino wenno lokal a dialekto, ken umawat ti sungbat a naibatay iti pudno a datos ti talon.",
     pitch_eyebrow: "Idatag ti idea", pitch_title: "Adda kadi solusion a pudno a kasapulan dagiti mannalon?",
     pitch_desc: "Agtrabahokami kadagiti founder, researcher, ken estudiante ti agri-tech nga adda agtrabtrabaho nga ideana — sensor, modelo, wenno distribution channel — ken kayatna a suoten daytoy kadagiti pudno a kooperatiba imbes iti laboratorio.",
-    pitch_email_note_html: "Kayat mo nga email? Suraten idiay <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Kayat mo nga email? Suraten idiay <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Nagan", pitch_email_label: "Email", pitch_idea_label: "Ideam",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "sika@example.com", pitch_idea_ph: "Ania ti problema a nalutlutuenna, ken para kadagiti ania a mannalon?", pitch_submit: "Ipatulod ti idatag",
     contact_title: "Agtrabtrabahoka kadi iti kooperatiba, LGU, wenno agribusiness?",
@@ -472,7 +581,7 @@ const translations = {
     innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
     pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
     pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
-    pitch_email_note_html: "Mas gusto niyo ba email? Sumulat sa <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Mas gusto niyo ba email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Ang ideya mo",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
     contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
@@ -514,7 +623,7 @@ const translations = {
     innov4_tag: "Pilot pa", innov4_title: "Laygay paagi sa tingog", innov4_desc: "Isa ka call-in line para sa mangunguma nga wala sing smartphone — magpamangkot sa Filipino ukon lokal nga dialekto, kag makabaton sang sabat nga base sa matuod nga datos sang uma.",
     pitch_eyebrow: "Isugyot ang ideya", pitch_title: "May solusyon ka bala nga matuod nga kinahanglan sang mangunguma?",
     pitch_desc: "Nagatrabaho kami kaupod sang mga founder, researcher, kag estudyante sang agri-tech nga may nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — kag gusto ini testingan kaupod sang matuod nga kooperatiba sa baylo sang laboratoryo.",
-    pitch_email_note_html: "Gusto mo bala email? Sulati ang <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Gusto mo bala email? Sulati ang <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imo ideya",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Ano nga problema ang ginasolusyunan sini, kag para kay sin-o nga mangunguma?", pitch_submit: "Ipadala ang sugyot",
     contact_title: "Nagatrabaho ka bala kaupod sang kooperatiba, LGU, ukon agribusiness?",
@@ -556,7 +665,7 @@ const translations = {
     innov4_tag: "Piloto pa", innov4_title: "Pamagsabi liwat king voice", innov4_desc: "Metung yang call-in line para karing talasaka a alang smartphone — mitanong king Filipino o lokal a dialekto, at manalo yang sagut a base king tutuang datos king bukid.",
     pitch_eyebrow: "Ibye ing idea", pitch_title: "Atin ka bang solusyon a tutu yang kailangan ning talasaka?",
     pitch_desc: "Makikayabe kami karing founder, researcher, at estudyanteng agri-tech a atin gagawang idea — sensor, modelo, o distribution channel — at buri lang subukan ini kareng tutuang kooperatiba imbes king laboratoryo.",
-    pitch_email_note_html: "Buri mu email? Sulat king <a href=\"mailto:digitalagriphil@gmail.com\" class=\"underline hover:text-[#C99A3D]\">digitalagriphil@gmail.com</a>",
+    pitch_email_note_html: "Buri mu email? Sulat king <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
     pitch_name_label: "Lagyu", pitch_email_label: "Email", pitch_idea_label: "Ing idea mu",
     pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ika@example.com", pitch_idea_ph: "Nanung problema ing sasabli na, at para karing nanung talasaka?", pitch_submit: "Ipadala ing pamagsulat",
     contact_title: "Makikayabe ka la keng kooperatiba, LGU, o agribusiness?",
@@ -678,6 +787,38 @@ const translations = {
     initLanguageSwitcher();
   }
 })();
+
+
+// Dark mode
+const darkModeToggle = document.getElementById('darkModeToggle');
+const darkModeIcon = document.getElementById('darkModeIcon');
+const savedTheme = localStorage.getItem('dapo-theme');
+if (savedTheme === 'dark') document.body.classList.add('dark-mode');
+function updateThemeIcon(){
+  if (!darkModeIcon) return;
+  darkModeIcon.innerHTML = document.body.classList.contains('dark-mode')
+    ? '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>'
+    : '<path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"></path>';
+}
+updateThemeIcon();
+darkModeToggle?.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('dapo-theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  updateThemeIcon();
+});
+
+// Floating AI Agent
+const aiChatButton = document.getElementById('aiChatButton');
+const aiChatPanel = document.getElementById('aiChatPanel');
+const aiChatClose = document.getElementById('aiChatClose');
+function toggleAI(open){
+  aiChatPanel?.classList.toggle('open', open);
+  aiChatPanel?.setAttribute('aria-hidden', String(!open));
+  aiChatButton?.setAttribute('aria-expanded', String(open));
+}
+aiChatButton?.addEventListener('click', () => toggleAI(!aiChatPanel.classList.contains('open')));
+aiChatClose?.addEventListener('click', () => toggleAI(false));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleAI(false); });
 </script>
 
 </body>
