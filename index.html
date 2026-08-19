@@ -152,7 +152,15 @@ body.dark-mode .ai-msg.bot{background:#1B3322;color:#EAF3E1}
   #langMenu summary{width:40px;height:40px;padding:0;justify-content:center;font-size:0}
   #langMenu summary span{display:none}
   #langMenu summary svg{width:17px;height:17px}
-  #langMenu>div{position:fixed!important;top:62px;right:8px;margin-top:0!important;width:min(220px,calc(100vw - 16px));max-height:65vh;overflow-y:auto}
+  /* Mobile language menu: keep its position, but make all 7 languages easy to see and scroll. */
+  #langMenu{position:relative!important}
+  #langMenu>div{position:absolute!important;top:calc(100% + 8px)!important;bottom:auto!important;right:0!important;left:auto!important;margin:0!important;width:min(250px,calc(100vw - 16px))!important;height:auto!important;max-height:calc(100vh - 88px)!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:auto;scrollbar-color:rgba(31,51,39,.45) transparent;padding-top:6px!important;padding-bottom:6px!important;z-index:10000!important}
+  #langMenu>div::-webkit-scrollbar{width:8px}
+  #langMenu>div::-webkit-scrollbar-track{background:transparent}
+  #langMenu>div::-webkit-scrollbar-thumb{background:rgba(31,51,39,.45);border-radius:999px}
+  #langMenu>div .lang-option{min-height:44px;display:flex;align-items:center;padding-top:0.65rem;padding-bottom:0.65rem}
+  body.dark-mode #langMenu>div{scrollbar-color:rgba(234,243,225,.5) transparent}
+  body.dark-mode #langMenu>div::-webkit-scrollbar-thumb{background:rgba(234,243,225,.5)}
   body>section:first-of-type{padding-top:8.5rem!important}
   .agri-decor{display:block!important}
 }
@@ -233,7 +241,410 @@ header > div {
   }
 }
 
+
+/* FINAL MOBILE LANGUAGE FIX ONLY */
+@media (max-width: 767px){
+  #langMenu > div{
+    position: fixed !important;
+    top: 70px !important;
+    right: 8px !important;
+    left: auto !important;
+    width: min(250px, calc(100vw - 16px)) !important;
+    height: 300px !important;
+    max-height: calc(100vh - 86px) !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    z-index: 99999 !important;
+  }
+  #langMenu > div .lang-option{min-height:44px !important;display:flex !important;align-items:center !important;}
+}
+@media (max-width: 767px) {
+  #langMenu {
+    margin-top: 34px !important;
+  }
+}
 </style>
+
+<style>
+@media (max-width: 767px) {
+  /* Extra top clearance so the complete language dropdown is visible below the header. */
+  details > div[class*="absolute"][class*="right-0"] {
+    margin-top: 18px !important;
+    max-height: calc(100dvh - 96px) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+</style>
+
+<style id="mobile-language-final-fix">
+@media (max-width: 767px) {
+  /* Keep the existing Language button in place; only adjust its dropdown. */
+  details:has(.lang-option) {
+    position: relative !important;
+  }
+
+  details:has(.lang-option) > div {
+    position: absolute !important;
+    top: calc(100% + 18px) !important;
+    right: 0 !important;
+    margin-top: 0 !important;
+    width: min(82vw, 300px) !important;
+    max-height: min(56vh, 360px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    z-index: 99999 !important;
+    box-sizing: border-box !important;
+    scrollbar-width: auto !important;
+  }
+
+  details:has(.lang-option) > div::-webkit-scrollbar {
+    width: 8px !important;
+  }
+
+  details:has(.lang-option) > div::-webkit-scrollbar-thumb {
+    background: rgba(31, 51, 39, 0.45) !important;
+    border-radius: 999px !important;
+  }
+
+  details:has(.lang-option) > div::-webkit-scrollbar-track {
+    background: rgba(31, 51, 39, 0.10) !important;
+    border-radius: 999px !important;
+  }
+
+  details:has(.lang-option) .lang-option {
+    display: block !important;
+    min-height: 44px !important;
+    padding: 11px 16px !important;
+    line-height: 22px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="language-mobile-final-final">
+@media (max-width: 767px) {
+  /* LANGUAGE ONLY: place the dropdown below the fixed header without
+     changing the position of the Language button itself. */
+  #langMenu {
+    position: static !important;
+    margin: 0 !important;
+  }
+
+  #langMenu > div {
+    position: absolute !important;
+    top: 104px !important;
+    right: 8px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: min(280px, calc(100vw - 16px)) !important;
+    height: auto !important;
+    max-height: min(330px, calc(100dvh - 120px)) !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 6px 0 !important;
+
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+
+    z-index: 2147483647 !important;
+    box-sizing: border-box !important;
+    scrollbar-width: auto !important;
+    scrollbar-color: rgba(31,51,39,.55) rgba(31,51,39,.08) !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar {
+    width: 9px !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar-track {
+    background: rgba(31,51,39,.08) !important;
+    border-radius: 10px !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar-thumb {
+    background: rgba(31,51,39,.55) !important;
+    border-radius: 10px !important;
+  }
+
+  #langMenu > div .lang-option {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 11px 16px !important;
+    line-height: 24px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="all-seven-languages-mobile">
+@media (max-width: 767px) {
+  #langMenu > div {
+    top: 96px !important;
+    right: 8px !important;
+    width: min(280px, calc(100vw - 16px)) !important;
+
+    /* Seven options × 46px, so ALL seven are visible together. */
+    height: 336px !important;
+    min-height: 336px !important;
+    max-height: 336px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+    z-index: 2147483647 !important;
+  }
+
+  #langMenu > div .lang-option {
+    height: 46px !important;
+    min-height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    padding: 10px 16px !important;
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="language-menu-only-final">
+@media (max-width: 767px) {
+  #langMenu > div {
+    position: fixed !important;
+    top: 82px !important;
+    right: 8px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: min(280px, calc(100vw - 16px)) !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: calc(100dvh - 96px) !important;
+
+    margin: 0 !important;
+    padding: 6px 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    box-sizing: border-box !important;
+
+    z-index: 2147483647 !important;
+    scrollbar-width: auto !important;
+  }
+
+  #langMenu > div .lang-option {
+    display: flex !important;
+    align-items: center !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    padding: 10px 16px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="mobile-header-margin-only">
+@media (max-width: 767px) {
+  header > div {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  header .brand-wrap {
+    margin-top: 8px !important;
+  }
+
+  /* Keep the language dropdown below the newly spaced header. */
+  #langMenu > div {
+    top: 96px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-more-top-margin">
+@media (max-width: 767px) {
+  header > div {
+    padding-top: 28px !important;
+    padding-bottom: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  header .brand-wrap {
+    margin-top: 18px !important;
+  }
+
+  /* Keep the language dropdown clear of the expanded header. */
+  #langMenu > div {
+    top: 116px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-extra-spacing">
+@media (max-width: 767px) {
+  /* One more step of spacing above and two steps below the brand. */
+  header > div {
+    padding-top: 36px !important;
+    padding-bottom: 30px !important;
+    box-sizing: border-box !important;
+  }
+
+  header .brand-wrap {
+    margin-top: 26px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Keep the language dropdown clear of the taller header. */
+  #langMenu > div {
+    top: 138px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-one-more-each">
+@media (max-width: 767px) {
+  /* One more increment above and one more below the brand. */
+  header > div {
+    padding-top: 44px !important;
+    padding-bottom: 38px !important;
+    box-sizing: border-box !important;
+  }
+
+  header .brand-wrap {
+    margin-top: 34px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Keep the language dropdown below the expanded header. */
+  #langMenu > div {
+    top: 154px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-bottom-and-scrollbar">
+@media (max-width: 767px) {
+  /* One more increment below the brand only. */
+  header > div {
+    padding-bottom: 46px !important;
+  }
+
+  header .brand-wrap {
+    margin-bottom: 32px !important;
+  }
+
+  /* Keep the dropdown clear of the taller mobile header. */
+  #langMenu > div {
+    top: 162px !important;
+
+    /* Professional scrollbar */
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(31, 51, 39, 0.55) rgba(31, 51, 39, 0.08) !important;
+    scrollbar-gutter: stable !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar {
+    width: 7px !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar-track {
+    background: rgba(31, 51, 39, 0.06) !important;
+    border-radius: 999px !important;
+    margin: 7px 2px !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgba(31, 51, 39, 0.42),
+      rgba(31, 51, 39, 0.68)
+    ) !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(234, 243, 225, 0.75) !important;
+    min-height: 42px !important;
+  }
+
+  #langMenu > div::-webkit-scrollbar-thumb:hover {
+    background: rgba(31, 51, 39, 0.78) !important;
+  }
+
+  body.dark-mode #langMenu > div {
+    scrollbar-color: rgba(234, 243, 225, 0.58) rgba(234, 243, 225, 0.08) !important;
+  }
+
+  body.dark-mode #langMenu > div::-webkit-scrollbar-track {
+    background: rgba(234, 243, 225, 0.07) !important;
+  }
+
+  body.dark-mode #langMenu > div::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgba(234, 243, 225, 0.42),
+      rgba(234, 243, 225, 0.68)
+    ) !important;
+    border-color: rgba(31, 51, 39, 0.75) !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-two-more-each">
+@media (max-width: 767px) {
+  /* Two additional increments above and below the brand. */
+  header > div {
+    padding-top: 60px !important;
+    padding-bottom: 62px !important;
+    box-sizing: border-box !important;
+  }
+
+  header .brand-wrap {
+    margin-top: 50px !important;
+    margin-bottom: 48px !important;
+  }
+
+  /* Keep the language dropdown clear of the taller header. */
+  #langMenu > div {
+    top: 194px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-brand-bigger">
+@media (max-width: 767px) {
+  /* Make only the Digital Agri Philippines brand text larger. */
+  header .brand-name {
+    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    line-height: 1.1 !important;
+  }
+}
+</style>
+
 </head>
 <body class="antialiased">
 
@@ -553,10 +964,10 @@ header > div {
 </footer>
 
 <!-- Floating AI Agent -->
-<div id="aiChatPanel" class="ai-chat-panel" aria-hidden="true" role="dialog" aria-label="DAPO AI Agent">
+<div id="aiChatPanel" class="ai-chat-panel" aria-hidden="true" role="dialog" aria-label="QOSKO AI Agent">
   <div class="flex items-start justify-between gap-3">
     <div>
-      <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#4C6B47]">DAPO AI AGENT</p>
+      <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#4C6B47]">QOSKO AI AGENT</p>
       <h3 class="font-display text-2xl mt-1">How can I help?</h3>
     </div>
     <button id="aiChatClose" class="ai-chat-close" type="button" aria-label="Close AI Agent">×</button>
@@ -570,8 +981,8 @@ header > div {
   <p class="mt-3 text-[10px] opacity-50">Choose a question to get an automatic answer.</p>
 </div>
 <div class="ai-agent" aria-label="AI Agent">
-  <div class="ai-agent-label">Ask DAPO AI</div>
-  <button id="aiChatButton" class="ai-agent-button" type="button" aria-label="Open DAPO AI Agent" aria-expanded="false" title="DAPO AI Agent">
+  <div class="ai-agent-label">Ask QOSKO AI</div>
+  <button id="aiChatButton" class="ai-agent-button" type="button" aria-label="Open QOSKO AI Agent" aria-expanded="false" title="QOSKO AI Agent">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-4 2v-4.2A7.5 7.5 0 1 1 20 11.5Z"/>
       <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/>
@@ -851,6 +1262,15 @@ const translations = {
     const htmlElements = document.querySelectorAll('[data-i18n-html]');
     const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
     const languageOptions = document.querySelectorAll('.lang-option');
+    const languageMenu = document.getElementById('langMenu');
+    if (languageMenu) {
+      languageMenu.addEventListener('toggle', function () {
+        if (this.open) {
+          const menuList = this.querySelector(':scope > div');
+          if (menuList) menuList.scrollTop = 0;
+        }
+      });
+    }
 
     // Save the original English text so English always works, even though
     // the English dictionary does not need duplicate strings.
@@ -969,7 +1389,7 @@ darkModeToggle?.addEventListener('click', () => {
   updateThemeIcon();
 });
 
-// DAPO AI Agent — clickable questions + 3-minute idle close
+// QOSKO AI Agent — clickable questions + 3-minute idle close
 const aiChatButton = document.getElementById('aiChatButton');
 const aiChatPanel = document.getElementById('aiChatPanel');
 const aiChatClose = document.getElementById('aiChatClose');
@@ -1039,6 +1459,36 @@ document.querySelectorAll('.ai-question').forEach(btn=>{
 });
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleAI(false);});
+</script>
+
+
+// Mobile language menu: always reopen at the top so English and Tagalog are immediately visible.
+(function(){
+  const menu=document.getElementById('langMenu');
+  if(!menu) return;
+  menu.addEventListener('toggle',function(){
+    if(menu.open){
+      const list=menu.querySelector(':scope > div');
+      if(list) list.scrollTop=0;
+    }
+  });
+})();
+
+<script id="language-menu-reset-final">
+(function () {
+  const menu = document.getElementById('langMenu');
+  if (!menu) return;
+  const list = menu.querySelector(':scope > div');
+  if (!list) return;
+
+  menu.addEventListener('toggle', function () {
+    if (menu.open) {
+      requestAnimationFrame(function () {
+        list.scrollTop = 0;
+      });
+    }
+  });
+})();
 </script>
 
 </body>
