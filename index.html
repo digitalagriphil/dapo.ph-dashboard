@@ -32,6 +32,7 @@
   .pillar-card{transition:border-color 0.25s ease, transform 0.25s ease;}
   .pillar-card:hover{transform:translateY(-3px);}
   a:focus-visible, button:focus-visible{outline:2px solid var(--irrigation); outline-offset:3px;}
+  .lang-option[aria-current="true"]{background:#DCEACB; font-weight:600;}
 </style>
 </head>
 <body class="antialiased">
@@ -40,26 +41,26 @@
   <div class="relative max-w-6xl mx-auto px-6 md:px-10 h-24 flex flex-col items-center justify-center gap-1">
     <span class="font-display text-3xl md:text-4xl tracking-tight">Digital Agri Philippines</span>
     <nav class="hidden md:flex items-center gap-8 text-sm mt-1">
-      <a href="#work" class="hover:text-[#4C6B47] transition-colors">What we do</a>
-      <a href="#crops" class="hover:text-[#4C6B47] transition-colors">Focus areas</a>
-      <a href="#livestock" class="hover:text-[#4C6B47] transition-colors">Livestock &amp; farmers</a>
-      <a href="#innovations" class="hover:text-[#4C6B47] transition-colors">Innovations</a>
-      <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors">Pitch an idea</a>
+      <a href="#work" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_work">What we do</a>
+      <a href="#crops" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_crops">Focus areas</a>
+      <a href="#livestock" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_livestock">Livestock &amp; farmers</a>
+      <a href="#innovations" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_innovations">Innovations</a>
+      <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors" data-i18n="nav_pitch">Pitch an idea</a>
     </nav>
 
-    <details class="group absolute right-6 md:right-10 top-1/2 -translate-y-1/2">
+    <details id="langMenu" class="group absolute right-6 md:right-10 top-1/2 -translate-y-1/2">
       <summary class="list-none cursor-pointer flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#1F3327]/20 text-xs font-mono uppercase tracking-wide hover:border-[#1F3327]/50 transition-colors select-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span>Language</span>
+        <span data-i18n="lang_label">Language</span>
       </summary>
       <div class="absolute right-0 mt-2 w-48 rounded-xl border border-[#1F3327]/12 bg-[#EAF3E1] shadow-lg py-2 text-sm font-sans normal-case">
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">English</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Tagalog</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Bisaya</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Ilokano</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Batangueño</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Ilonggo</a>
-        <a href="#" class="block px-4 py-2 hover:bg-[#DCEACB] transition-colors">Kapampangan</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="en">English</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="tl">Tagalog</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="ceb">Bisaya</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="ilo">Ilokano</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="bat">Batangueño</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="hil">Ilonggo</a>
+        <a href="#" class="lang-option block px-4 py-2 hover:bg-[#DCEACB] transition-colors" data-lang="pam">Kapampangan</a>
       </div>
     </details>
   </div>
@@ -76,97 +77,97 @@
   </div>
   <div class="relative max-w-6xl mx-auto px-6 md:px-10">
     <p class="fade-in font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-6" style="animation-delay:0.05s">Nueva Ecija · Isabela · Ilocos · Batangas · Marinduque</p>
-    <h1 class="fade-in font-display text-[13vw] leading-[0.95] md:text-7xl md:leading-[0.95] max-w-4xl" style="animation-delay:0.15s">
+    <h1 class="fade-in font-display text-[13vw] leading-[0.95] md:text-7xl md:leading-[0.95] max-w-4xl" style="animation-delay:0.15s" data-i18n-html="hero_title">
       We read the land<br>so farmers don't<br>have to guess.
     </h1>
-    <p class="fade-in mt-8 max-w-xl text-[17px] leading-relaxed text-[#1F3327]/80" style="animation-delay:0.3s">
+    <p class="fade-in mt-8 max-w-xl text-[17px] leading-relaxed text-[#1F3327]/80" style="animation-delay:0.3s" data-i18n="hero_subtitle">
       Digital Agriculture of the Philippines turns soil readings, weather patterns, and market signals into decisions a farmer or cooperative can act on before the next planting season — not after the harvest is already lost.
     </p>
     <div class="fade-in mt-10 flex flex-wrap items-center gap-4" style="animation-delay:0.4s">
-      <a href="#contact" class="px-6 py-3 rounded-full bg-[#1F3327] text-[#EAF3E1] text-sm font-medium hover:bg-[#4C6B47] transition-colors">Partner with us</a>
-      <a href="#work" class="px-6 py-3 rounded-full border border-[#1F3327]/25 text-sm font-medium hover:border-[#1F3327]/60 transition-colors">See how it works</a>
+      <a href="#contact" class="px-6 py-3 rounded-full bg-[#1F3327] text-[#EAF3E1] text-sm font-medium hover:bg-[#4C6B47] transition-colors" data-i18n="hero_cta_partner">Partner with us</a>
+      <a href="#work" class="px-6 py-3 rounded-full border border-[#1F3327]/25 text-sm font-medium hover:border-[#1F3327]/60 transition-colors" data-i18n="hero_cta_see">See how it works</a>
     </div>
   </div>
 </section>
 
 <section class="border-y border-[#1F3327]/10 bg-[#DCEACB]">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-6 flex flex-wrap gap-x-10 gap-y-2 items-center justify-between text-sm text-[#1F3327]/70">
-    <p class="font-display italic text-base text-[#1F3327]">"Farming decisions used to wait for the barangay meeting. Ours wait for the data."</p>
-    <p class="font-mono text-xs shrink-0">One Person Corporation, registered PH</p>
+    <p class="font-display italic text-base text-[#1F3327]" data-i18n="quote_text">"Farming decisions used to wait for the barangay meeting. Ours wait for the data."</p>
+    <p class="font-mono text-xs shrink-0" data-i18n="quote_reg">One Person Corporation, registered PH</p>
   </div>
 </section>
 
 <section id="work" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
   <div class="max-w-2xl mb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">How we work</p>
-    <h2 class="font-display text-4xl md:text-5xl leading-tight">Three steps between raw field and a decision that pays off.</h2>
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4" data-i18n="work_eyebrow">How we work</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight" data-i18n="work_title">Three steps between raw field and a decision that pays off.</h2>
   </div>
   <div class="grid md:grid-cols-3 gap-6">
     <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
-      <span class="font-mono text-xs text-[#C99A3D]">01 · Sense</span>
-      <h3 class="font-display text-2xl mt-3 mb-3">Ground truth</h3>
-      <p class="text-sm text-[#1F3327]/75 leading-relaxed">Low-cost soil, moisture, and weather sensors deployed field-by-field, plus satellite imagery for the plots we can't wire up yet. Every reading is timestamped and geotagged to the actual parcel.</p>
+      <span class="font-mono text-xs text-[#C99A3D]" data-i18n="work1_tag">01 · Sense</span>
+      <h3 class="font-display text-2xl mt-3 mb-3" data-i18n="work1_title">Ground truth</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="work1_desc">Low-cost soil, moisture, and weather sensors deployed field-by-field, plus satellite imagery for the plots we can't wire up yet. Every reading is timestamped and geotagged to the actual parcel.</p>
     </div>
     <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
-      <span class="font-mono text-xs text-[#4C6B47]">02 · Analyze</span>
-      <h3 class="font-display text-2xl mt-3 mb-3">Local models</h3>
-      <p class="text-sm text-[#1F3327]/75 leading-relaxed">Yield and pest-risk models trained on Philippine crop cycles, not imported defaults — a palay model that actually knows what a wet-season typhoon does to a Nueva Ecija paddy.</p>
+      <span class="font-mono text-xs text-[#4C6B47]" data-i18n="work2_tag">02 · Analyze</span>
+      <h3 class="font-display text-2xl mt-3 mb-3" data-i18n="work2_title">Local models</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="work2_desc">Yield and pest-risk models trained on Philippine crop cycles, not imported defaults — a palay model that actually knows what a wet-season typhoon does to a Nueva Ecija paddy.</p>
     </div>
     <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
-      <span class="font-mono text-xs text-[#2E5266]">03 · Act</span>
-      <h3 class="font-display text-2xl mt-3 mb-3">In-hand advisory</h3>
-      <p class="text-sm text-[#1F3327]/75 leading-relaxed">SMS and app alerts in Filipino and regional dialects, routed through cooperative extension workers who already have the farmer's trust — the tech stays behind the person, not in front.</p>
+      <span class="font-mono text-xs text-[#2E5266]" data-i18n="work3_tag">03 · Act</span>
+      <h3 class="font-display text-2xl mt-3 mb-3" data-i18n="work3_title">In-hand advisory</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="work3_desc">SMS and app alerts in Filipino and regional dialects, routed through cooperative extension workers who already have the farmer's trust — the tech stays behind the person, not in front.</p>
     </div>
   </div>
 </section>
 
 <section id="impact" class="bg-[#1F3327] text-[#EAF3E1]">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28">
-    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4">Where we've worked</p>
-    <h2 class="font-display text-3xl md:text-4xl max-w-xl mb-16">Early, focused, and still growing.</h2>
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4" data-i18n="impact_eyebrow">Where we've worked</p>
+    <h2 class="font-display text-3xl md:text-4xl max-w-xl mb-16" data-i18n="impact_title">Early, focused, and still growing.</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
       <div>
         <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">1,240</p>
-        <p class="text-sm text-[#EAF3E1]/65 mt-2">Farms with active field data</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2" data-i18n="impact1_label">Farms with active field data</p>
       </div>
       <div>
         <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">4</p>
-        <p class="text-sm text-[#EAF3E1]/65 mt-2">Provinces under coverage</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2" data-i18n="impact2_label">Provinces under coverage</p>
       </div>
       <div>
         <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">18%</p>
-        <p class="text-sm text-[#EAF3E1]/65 mt-2">Avg. yield gain, pilot cohort</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2" data-i18n="impact3_label">Avg. yield gain, pilot cohort</p>
       </div>
       <div>
         <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">37</p>
-        <p class="text-sm text-[#EAF3E1]/65 mt-2">Cooperatives onboarded</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2" data-i18n="impact4_label">Cooperatives onboarded</p>
       </div>
     </div>
-    <p class="font-mono text-[11px] text-[#EAF3E1]/40 mt-10">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
+    <p class="font-mono text-[11px] text-[#EAF3E1]/40 mt-10" data-i18n="impact_footnote">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
   </div>
 </section>
 
 <section id="crops" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
   <div class="max-w-2xl mb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Focus areas</p>
-    <h2 class="font-display text-4xl md:text-5xl leading-tight">Built around what's actually grown here.</h2>
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4" data-i18n="crops_eyebrow">Focus areas</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight" data-i18n="crops_title">Built around what's actually grown here.</h2>
   </div>
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
     <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
-      <h3 class="font-display text-xl mb-2">Palay</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Irrigation timing and pest-pressure alerts across wet and dry season plantings.</p>
+      <h3 class="font-display text-xl mb-2" data-i18n="crop1_title">Palay</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="crop1_desc">Irrigation timing and pest-pressure alerts across wet and dry season plantings.</p>
     </div>
     <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
-      <h3 class="font-display text-xl mb-2">Mango</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Flower-induction and harvest-window forecasting for export-grade fruit.</p>
+      <h3 class="font-display text-xl mb-2" data-i18n="crop2_title">Mango</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="crop2_desc">Flower-induction and harvest-window forecasting for export-grade fruit.</p>
     </div>
     <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
-      <h3 class="font-display text-xl mb-2">Coconut</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Long-cycle yield tracking and intercropping recommendations for smallholders.</p>
+      <h3 class="font-display text-xl mb-2" data-i18n="crop3_title">Coconut</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="crop3_desc">Long-cycle yield tracking and intercropping recommendations for smallholders.</p>
     </div>
     <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
-      <h3 class="font-display text-xl mb-2">Sugarcane</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Soil nutrient mapping tied directly to milling schedules.</p>
+      <h3 class="font-display text-xl mb-2" data-i18n="crop4_title">Sugarcane</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="crop4_desc">Soil nutrient mapping tied directly to milling schedules.</p>
     </div>
   </div>
 </section>
@@ -174,68 +175,68 @@
 <section id="livestock" class="bg-[#DCEACB]/60 border-y border-[#1F3327]/10">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
     <div class="max-w-2xl mb-16">
-      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Livestock &amp; farmers</p>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight">The herd matters as much as the harvest.</h2>
-      <p class="mt-6 text-[#1F3327]/75 leading-relaxed">Crop data tells half the story for most smallholder households — the other half is walking around the backyard pen. We track livestock health and connect the farmers behind both.</p>
+      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4" data-i18n="livestock_eyebrow">Livestock &amp; farmers</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight" data-i18n="livestock_title">The herd matters as much as the harvest.</h2>
+      <p class="mt-6 text-[#1F3327]/75 leading-relaxed" data-i18n="livestock_desc">Crop data tells half the story for most smallholder households — the other half is walking around the backyard pen. We track livestock health and connect the farmers behind both.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 mb-14">
       <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
-        <h3 class="font-display text-2xl mb-3">Swine &amp; poultry</h3>
-        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Early disease-outbreak alerts for backyard and small commercial raisers, built after repeated ASF and avian flu losses across Luzon.</p>
+        <h3 class="font-display text-2xl mb-3" data-i18n="ls1_title">Swine &amp; poultry</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="ls1_desc">Early disease-outbreak alerts for backyard and small commercial raisers, built after repeated ASF and avian flu losses across Luzon.</p>
       </div>
       <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
-        <h3 class="font-display text-2xl mb-3">Carabao &amp; cattle</h3>
-        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Feeding and breeding schedules paired with the same weather data driving the crop-side advisories, since both share the same farm calendar.</p>
+        <h3 class="font-display text-2xl mb-3" data-i18n="ls2_title">Carabao &amp; cattle</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="ls2_desc">Feeding and breeding schedules paired with the same weather data driving the crop-side advisories, since both share the same farm calendar.</p>
       </div>
       <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
-        <h3 class="font-display text-2xl mb-3">Farmer registry</h3>
-        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Every household we work with is profiled once — land, herd, and crop — so advisories arrive relevant instead of generic.</p>
+        <h3 class="font-display text-2xl mb-3" data-i18n="ls3_title">Farmer registry</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed" data-i18n="ls3_desc">Every household we work with is profiled once — land, herd, and crop — so advisories arrive relevant instead of generic.</p>
       </div>
     </div>
     <div class="rounded-2xl border border-[#1F3327]/12 bg-white/50 p-8 md:p-10 grid sm:grid-cols-3 gap-8">
       <div>
         <p class="font-mono text-3xl text-[#4C6B47]">2,900</p>
-        <p class="text-sm text-[#1F3327]/70 mt-2">Farmer households profiled</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2" data-i18n="lsstat1_label">Farmer households profiled</p>
       </div>
       <div>
         <p class="font-mono text-3xl text-[#4C6B47]">6,100</p>
-        <p class="text-sm text-[#1F3327]/70 mt-2">Livestock heads under monitoring</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2" data-i18n="lsstat2_label">Livestock heads under monitoring</p>
       </div>
       <div>
         <p class="font-mono text-3xl text-[#4C6B47]">62%</p>
-        <p class="text-sm text-[#1F3327]/70 mt-2">Households raising both crops and livestock</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2" data-i18n="lsstat3_label">Households raising both crops and livestock</p>
       </div>
     </div>
-    <p class="font-mono text-[11px] text-[#1F3327]/40 mt-6">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
+    <p class="font-mono text-[11px] text-[#1F3327]/40 mt-6" data-i18n="livestock_footnote">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
   </div>
 </section>
 
 <section id="innovations" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
   <div class="max-w-2xl mb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Innovations</p>
-    <h2 class="font-display text-4xl md:text-5xl leading-tight">What we're building next for Philippine agriculture.</h2>
-    <p class="mt-6 text-[#1F3327]/75 leading-relaxed max-w-xl">Some of these are already in the field, others are pilots — all are being tested with real cooperatives before they go anywhere near a wider rollout.</p>
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4" data-i18n="innov_eyebrow">Innovations</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight" data-i18n="innov_title">What we're building next for Philippine agriculture.</h2>
+    <p class="mt-6 text-[#1F3327]/75 leading-relaxed max-w-xl" data-i18n="innov_desc">Some of these are already in the field, others are pilots — all are being tested with real cooperatives before they go anywhere near a wider rollout.</p>
   </div>
   <div class="grid sm:grid-cols-2 gap-5">
     <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
-      <span class="font-mono text-xs text-[#2E5266]">In the field</span>
-      <h3 class="font-display text-xl mt-2 mb-2">Drone crop mapping</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Low-altitude multispectral flyovers flag stressed or flooded sections of a field days before they're visible from the paddy edge.</p>
+      <span class="font-mono text-xs text-[#2E5266]" data-i18n="innov1_tag">In the field</span>
+      <h3 class="font-display text-xl mt-2 mb-2" data-i18n="innov1_title">Drone crop mapping</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="innov1_desc">Low-altitude multispectral flyovers flag stressed or flooded sections of a field days before they're visible from the paddy edge.</p>
     </div>
     <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
-      <span class="font-mono text-xs text-[#2E5266]">In the field</span>
-      <h3 class="font-display text-xl mt-2 mb-2">Solar sensor stations</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Off-grid soil and weather stations built for areas without reliable power, reporting over low-bandwidth cellular links.</p>
+      <span class="font-mono text-xs text-[#2E5266]" data-i18n="innov2_tag">In the field</span>
+      <h3 class="font-display text-xl mt-2 mb-2" data-i18n="innov2_title">Solar sensor stations</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="innov2_desc">Off-grid soil and weather stations built for areas without reliable power, reporting over low-bandwidth cellular links.</p>
     </div>
     <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
-      <span class="font-mono text-xs text-[#C99A3D]">Piloting</span>
-      <h3 class="font-display text-xl mt-2 mb-2">Blockchain traceability</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Farm-to-buyer product tracing for export-grade mango and coconut, giving smallholders proof of origin buyers pay a premium for.</p>
+      <span class="font-mono text-xs text-[#C99A3D]" data-i18n="innov3_tag">Piloting</span>
+      <h3 class="font-display text-xl mt-2 mb-2" data-i18n="innov3_title">Blockchain traceability</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="innov3_desc">Farm-to-buyer product tracing for export-grade mango and coconut, giving smallholders proof of origin buyers pay a premium for.</p>
     </div>
     <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
-      <span class="font-mono text-xs text-[#C99A3D]">Piloting</span>
-      <h3 class="font-display text-xl mt-2 mb-2">Voice-based advisory</h3>
-      <p class="text-sm text-[#1F3327]/70 leading-relaxed">A call-in line for farmers without smartphones — ask a question in Filipino or a regional dialect, get an answer grounded in local field data.</p>
+      <span class="font-mono text-xs text-[#C99A3D]" data-i18n="innov4_tag">Piloting</span>
+      <h3 class="font-display text-xl mt-2 mb-2" data-i18n="innov4_title">Voice-based advisory</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed" data-i18n="innov4_desc">A call-in line for farmers without smartphones — ask a question in Filipino or a regional dialect, get an answer grounded in local field data.</p>
     </div>
   </div>
 </section>
@@ -243,25 +244,25 @@
 <section id="pitch" class="bg-[#1F3327] text-[#EAF3E1]">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid lg:grid-cols-2 gap-14">
     <div>
-      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4">Pitch an idea</p>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Got a solution farmers actually need?</h2>
-      <p class="text-[#EAF3E1]/75 leading-relaxed max-w-md">We work with founders, researchers, and agri-tech students who have a working idea — a sensor, a model, a distribution channel — and want to test it with real cooperatives instead of a lab.</p>
-      <p class="text-[#EAF3E1]/50 text-sm mt-8">Prefer email? Write to <a href="mailto:pitch@digitalagri.ph" class="underline hover:text-[#C99A3D]">pitch@digitalagri.ph</a></p>
+      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4" data-i18n="pitch_eyebrow">Pitch an idea</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6" data-i18n="pitch_title">Got a solution farmers actually need?</h2>
+      <p class="text-[#EAF3E1]/75 leading-relaxed max-w-md" data-i18n="pitch_desc">We work with founders, researchers, and agri-tech students who have a working idea — a sensor, a model, a distribution channel — and want to test it with real cooperatives instead of a lab.</p>
+      <p class="text-[#EAF3E1]/50 text-sm mt-8" data-i18n-html="pitch_email_note_html">Prefer email? Write to <a href="mailto:pitch@digitalagri.ph" class="underline hover:text-[#C99A3D]">pitch@digitalagri.ph</a></p>
     </div>
     <form action="mailto:pitch@digitalagri.ph" method="post" enctype="text/plain" class="flex flex-col gap-4">
       <div>
-        <label for="pitch-name" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Name</label>
-        <input id="pitch-name" name="name" type="text" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="Juan Dela Cruz">
+        <label for="pitch-name" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_name_label">Name</label>
+        <input id="pitch-name" name="name" type="text" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="Juan Dela Cruz" data-i18n-placeholder="pitch_name_ph">
       </div>
       <div>
-        <label for="pitch-email" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Email</label>
-        <input id="pitch-email" name="email" type="email" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="you@example.com">
+        <label for="pitch-email" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_email_label">Email</label>
+        <input id="pitch-email" name="email" type="email" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="you@example.com" data-i18n-placeholder="pitch_email_ph">
       </div>
       <div>
-        <label for="pitch-idea" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Your idea</label>
-        <textarea id="pitch-idea" name="idea" required rows="4" class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="What problem does it solve, and for which farmers?"></textarea>
+        <label for="pitch-idea" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_idea_label">Your idea</label>
+        <textarea id="pitch-idea" name="idea" required rows="4" class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="What problem does it solve, and for which farmers?" data-i18n-placeholder="pitch_idea_ph"></textarea>
       </div>
-      <button type="submit" class="mt-2 px-6 py-3.5 rounded-full bg-[#C99A3D] text-[#1F3327] font-medium hover:bg-[#EAF3E1] transition-colors">Send pitch</button>
+      <button type="submit" class="mt-2 px-6 py-3.5 rounded-full bg-[#C99A3D] text-[#1F3327] font-medium hover:bg-[#EAF3E1] transition-colors" data-i18n="pitch_submit">Send pitch</button>
     </form>
   </div>
 </section>
@@ -269,22 +270,321 @@
 <section id="contact" class="border-t border-[#1F3327]/10">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid md:grid-cols-2 gap-12 items-end">
     <div>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Working with a cooperative, an LGU, or an agribusiness?</h2>
-      <p class="text-[#1F3327]/75 leading-relaxed max-w-md">We onboard one province at a time so the models stay accurate to that soil and season. Tell us where you farm and what you're growing.</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6" data-i18n="contact_title">Working with a cooperative, an LGU, or an agribusiness?</h2>
+      <p class="text-[#1F3327]/75 leading-relaxed max-w-md" data-i18n="contact_desc">We onboard one province at a time so the models stay accurate to that soil and season. Tell us where you farm and what you're growing.</p>
     </div>
     <div class="flex flex-col gap-3 md:items-end">
       <a href="mailto:hello@digitalagri.ph" class="w-full md:w-auto text-center px-7 py-3.5 rounded-full bg-[#1F3327] text-[#EAF3E1] font-medium hover:bg-[#4C6B47] transition-colors">hello@digitalagri.ph</a>
-      <p class="font-mono text-xs text-[#1F3327]/50">Digital Agriculture of the Philippines OPC</p>
+      <p class="font-mono text-xs text-[#1F3327]/50" data-i18n="contact_label">Digital Agriculture of the Philippines OPC</p>
     </div>
   </div>
 </section>
 
 <footer class="border-t border-[#1F3327]/10 bg-[#DCEACB]">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-8 flex flex-wrap justify-between items-center gap-4 text-xs text-[#1F3327]/55 font-mono">
-    <p>© 2026 Digital Agriculture of the Philippines OPC</p>
-    <p>Registered One Person Corporation · Republic of the Philippines</p>
+    <p data-i18n="footer_copyright">© 2026 Digital Agriculture of the Philippines OPC</p>
+    <p data-i18n="footer_reg">Registered One Person Corporation · Republic of the Philippines</p>
   </div>
 </footer>
+
+<script>
+const translations = {
+  en: {},
+  tl: {
+    nav_work: "Ang aming ginagawa", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", nav_pitch: "Magmungkahi ng ideya", lang_label: "Wika",
+    hero_title: "Binabasa namin ang lupa<br>para hindi na kailangang<br>manghula ng magsasaka.",
+    hero_subtitle: "Ginagawa ng Digital Agriculture of the Philippines ang datos ng lupa, panahon, at merkado bilang mga desisyong maaaring kilos-agad ng magsasaka o kooperatiba bago pa man dumating ang susunod na taniman — hindi pagkatapos mawala ang ani.",
+    hero_cta_partner: "Makipagtulungan sa amin", hero_cta_see: "Tingnan kung paano gumagana",
+    quote_text: "\u201cDati, naghihintay ang desisyon sa pagsasaka sa pulong sa barangay. Sa amin, naghihintay ito sa datos.\u201d",
+    quote_reg: "One Person Corporation, rehistrado sa PH",
+    work_eyebrow: "Paano kami gumagana", work_title: "Tatlong hakbang mula sa hilaw na bukid hanggang sa desisyong may kapakinabangan.",
+    work1_tag: "01 · Suriin", work1_title: "Totoong datos", work1_desc: "Murang sensor ng lupa, halumigmig, at panahon na inilagay sa bawat bukid, dagdag pa ang satellite imagery para sa mga lupang hindi pa naaabot. Bawat basa ay may petsa at lokasyon sa tunay na parsela.",
+    work2_tag: "02 · Suriin", work2_title: "Lokal na modelo", work2_desc: "Mga modelo ng ani at panganib sa peste na sinanay gamit ang siklo ng pananim sa Pilipinas, hindi ang mga imported na default — isang modelo ng palay na alam talaga ang epekto ng bagyo sa panahon ng tag-ulan sa palayan ng Nueva Ecija.",
+    work3_tag: "03 · Kumilos", work3_title: "Payo na abot-kamay", work3_desc: "SMS at app alerts sa Filipino at mga lokal na diyalekto, dumadaan sa mga extension worker ng kooperatiba na kilala at pinagkakatiwalaan na ng magsasaka — ang teknolohiya ay nasa likod ng tao, hindi sa harapan.",
+    impact_eyebrow: "Kung saan kami nagtrabaho", impact_title: "Maaga pa, nakatutok, at patuloy na lumalago.",
+    impact1_label: "Mga bukid na may aktibong datos", impact2_label: "Mga probinsyang sakop", impact3_label: "Avg. pagtaas ng ani, pilot cohort", impact4_label: "Mga kooperatibang sumali",
+    impact_footnote: "Datos mula sa mga pilot deployment, 2024–2026. Ilustratibo lamang — humingi ng aming pinakabagong impact report para sa beripikadong datos.",
+    crops_eyebrow: "Mga tinutukan", crops_title: "Ginawa batay sa talagang itinatanim dito.",
+    crop1_title: "Palay", crop1_desc: "Timing ng patubig at alerto sa peste sa buong tag-ulan at tag-init na taniman.",
+    crop2_title: "Mangga", crop2_desc: "Prediksyon ng pamumulaklak at oras ng pag-ani para sa prutas na pang-export.",
+    crop3_title: "Niyog", crop3_desc: "Pagsubaybay sa mahabang ani at rekomendasyon sa intercropping para sa maliliit na magsasaka.",
+    crop4_title: "Tubo", crop4_desc: "Mapping ng sustansya ng lupa na direktang naka-ugnay sa iskedyul ng paggiling.",
+    livestock_eyebrow: "Hayop at magsasaka", livestock_title: "Kasinghalaga ng ani ang kawan.",
+    livestock_desc: "Kalahati lang ng kuwento ang datos ng pananim para sa karamihan ng maliliit na magsasaka — ang kalahati pa ay nasa likod-bahay na kulungan. Sinusubaybayan namin ang kalusugan ng hayop at ikinokonekta ang mga magsasaka sa likod nito.",
+    ls1_title: "Baboy at manok", ls1_desc: "Maagang alerto sa outbreak ng sakit para sa maliliit at bakuran na tagapag-alaga, gawa matapos ang paulit-ulit na pagkalugi dahil sa ASF at bird flu sa Luzon.",
+    ls2_title: "Kalabaw at baka", ls2_desc: "Iskedyul ng pagpapakain at pagpaparami na naka-pares sa parehong datos ng panahon na nagtutulak sa mga payo sa pananim, dahil pareho silang sumusunod sa iisang kalendaryo ng bukid.",
+    ls3_title: "Talaan ng magsasaka", ls3_desc: "Bawat sambahayang katrabaho namin ay minsanang pino-profile — lupa, kawan, at pananim — para umabot ang payo nang angkop, hindi pangkalahatan.",
+    lsstat1_label: "Sambahayan ng magsasakang na-profile", lsstat2_label: "Bilang ng hayop na sinusubaybayan", lsstat3_label: "Sambahayang nagpapalago ng pananim at hayop",
+    livestock_footnote: "Datos mula sa mga pilot deployment, 2024–2026. Ilustratibo lamang — humingi ng aming pinakabagong impact report para sa beripikadong datos.",
+    innov_eyebrow: "Mga inobasyon", innov_title: "Ang susunod naming binubuo para sa agrikultura ng Pilipinas.",
+    innov_desc: "Ang ilan dito ay nasa bukid na, ang iba ay pilot pa — lahat ay sinusubok kasama ang tunay na kooperatiba bago pa man ilunsad nang mas malawakan.",
+    innov1_tag: "Nasa bukid na", innov1_title: "Drone crop mapping", innov1_desc: "Mababang-lipad na multispectral flyover na tumutukoy sa mga bahaging naiipit o binabaha bago pa ito makita mula sa gilid ng palayan.",
+    innov2_tag: "Nasa bukid na", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid na estasyon ng lupa at panahon na ginawa para sa mga lugar na walang maaasahang kuryente, umuulat gamit ang low-bandwidth cellular connection.",
+    innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubaybay ng produkto mula bukid hanggang mamimili para sa export-grade na mangga at niyog, nagbibigay sa maliliit na magsasaka ng patunay ng pinagmulan na sinusuklian ng mamimili ng dagdag na presyo.",
+    innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
+    pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
+    pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
+    pitch_email_note_html: "Mas gusto ang email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Iyong ideya",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
+    contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
+    contact_desc: "Isang probinsya lang kami sa isang pagkakataon para manatiling tumpak ang mga modelo sa lupa at panahon doon. Sabihin sa amin kung saan ka nagsasaka at ano ang itinatanim mo.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika ng Pilipinas"
+  },
+  ceb: {
+    nav_work: "Among gibuhat", nav_crops: "Mga fokus", nav_livestock: "Kahayopan ug mag-uuma", nav_innovations: "Mga inobasyon", nav_pitch: "Isugyot ang ideya", lang_label: "Pinulongan",
+    hero_title: "Among gibasa ang yuta<br>aron ang mag-uuma dili na<br>kinahanglan mag-ilog.",
+    hero_subtitle: "Ang Digital Agriculture of the Philippines naghimo sa datos sa yuta, panahon, ug merkado nga mga desisyon nga mahimong buhaton sa mag-uuma o kooperatiba sa dili pa moabot ang sunod tanom — dili human na mawala ang ani.",
+    hero_cta_partner: "Makig-partner kanamo", hero_cta_see: "Tan-awa ang proseso",
+    quote_text: "\u201cKaniadto, ang desisyon sa pag-uma naghulat sa miting sa barangay. Sa amo, naghulat kini sa datos.\u201d",
+    quote_reg: "One Person Corporation, rehistrado sa PH",
+    work_eyebrow: "Giunsa namo pagtrabaho", work_title: "Tulo ka lakang gikan sa uma paingon sa desisyon nga adunay bili.",
+    work1_tag: "01 · Suta", work1_title: "Tinuod nga datos", work1_desc: "Barato nga sensor sa yuta, umog, ug panahon nga gibutang sa matag uma, dugang ang satellite imagery para sa mga lugar nga wala pa ma-abot. Ang matag reading naa'y petsa ug lokasyon sa tinuod nga parsela.",
+    work2_tag: "02 · Susiha", work2_title: "Lokal nga modelo", work2_desc: "Mga modelo sa ani ug peligro sa peste nga gibansay gamit ang siklo sa tanom sa Pilipinas, dili imported nga default — usa ka modelo sa humay nga tinuod nga nasayod unsay epekto sa bagyo sa tingtudo sa umahan sa Nueva Ecija.",
+    work3_tag: "03 · Buhata", work3_title: "Direktang tambag", work3_desc: "SMS ug app alerts sa Filipino ug lokal nga diyalekto, agi sa mga extension worker sa kooperatiba nga gisaligan na sa mag-uuma — ang teknolohiya naa sa luyo, dili sa atubangan.",
+    impact_eyebrow: "Diin kami nagtrabaho", impact_title: "Sayo pa, focused, ug padayong nagtubo.",
+    impact1_label: "Mga uma nga adunay aktibong datos", impact2_label: "Mga probinsya nga sakop", impact3_label: "Avg. pagtaas sa ani, pilot cohort", impact4_label: "Mga kooperatiba nga miapil",
+    impact_footnote: "Datos gikan sa mga pilot deployment, 2024–2026. Ilustratibo lang — pangayo sa among pinakabag-o nga impact report para sa na-verify nga datos.",
+    crops_eyebrow: "Mga fokus", crops_title: "Gihimo base sa tinuod nga gitanom dinhi.",
+    crop1_title: "Humay", crop1_desc: "Timing sa pagpaayaw ug alerto sa peste sa tibuok tingtudo ug tinginit nga tanom.",
+    crop2_title: "Mangga", crop2_desc: "Prediksyon sa pamulak ug oras sa ani para sa prutas nga pang-export.",
+    crop3_title: "Lubi", crop3_desc: "Pagsubay sa taas nga siklo sa ani ug rekomendasyon sa intercropping para sa gagmay nga mag-uuma.",
+    crop4_title: "Tubo", crop4_desc: "Mapa sa sustansya sa yuta nga direktang konektado sa iskedyul sa paggaling.",
+    livestock_eyebrow: "Kahayopan ug mag-uuma", livestock_title: "Ang panon importante sama sa ani.",
+    livestock_desc: "Katunga ra sa istorya ang datos sa tanom para sa kadaghanan sa gagmay nga panimalay — ang laing katunga naa sa likod-balay nga kulungan. Gisubay namo ang kahimsog sa hayop ug gikonekta ang mga mag-uuma sa luyo niini.",
+    ls1_title: "Baboy ug manok", ls1_desc: "Sayo nga alerto sa outbreak sa sakit para sa gagmay ug backyard nga nag-alaga, gihimo human sa balik-balik nga kadaot tungod sa ASF ug bird flu sa Luzon.",
+    ls2_title: "Kabaw ug baka", ls2_desc: "Iskedyul sa pagpakaon ug pagpasanay nga gipares sa parehas nga datos sa panahon nga naggiya sa mga tambag sa tanom, kay parehas silang nagsunod sa usa ka kalendaryo sa uma.",
+    ls3_title: "Rehistro sa mag-uuma", ls3_desc: "Matag panimalay nga among gitrabahoan, gi-profile kausa — yuta, panon, ug tanom — aron ang tambag mahimong angay, dili kinatibuk-an.",
+    lsstat1_label: "Mga panimalay sa mag-uuma nga na-profile", lsstat2_label: "Ihap sa hayop nga gisubay", lsstat3_label: "Panimalay nga nagpatubo og tanom ug hayop",
+    livestock_footnote: "Datos gikan sa mga pilot deployment, 2024–2026. Ilustratibo lang — pangayo sa among pinakabag-o nga impact report para sa na-verify nga datos.",
+    innov_eyebrow: "Mga inobasyon", innov_title: "Among sunod nga gitukod para sa agrikultura sa Pilipinas.",
+    innov_desc: "Pipila niini naa na sa uma, ang uban pilot pa — tanan gisulayan uban sa tinuod nga kooperatiba sa dili pa kini ipagawas nga mas lapad.",
+    innov1_tag: "Naa na sa uma", innov1_title: "Drone crop mapping", innov1_desc: "Ubos nga paglupad nga multispectral flyover nga nagtimaan sa stressed o baha nga bahin sa uma pila ka adlaw antes pa ini makita gikan sa daplin sa payatak.",
+    innov2_tag: "Naa na sa uma", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid nga estasyon sa yuta ug panahon nga gihimo para sa mga lugar nga walay sigurado nga kuryente, nagreport gamit ang low-bandwidth cellular nga koneksyon.",
+    innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubay sa produkto gikan sa uma hangtod sa mamalitay para sa export-grade nga mangga ug lubi, naghatag sa gagmay nga mag-uuma og pamatuod sa gigikanan nga gibayaran og dugang sa mamalitay.",
+    innov4_tag: "Pilot pa", innov4_title: "Tambag pinaagi sa tingog", innov4_desc: "Usa ka call-in line para sa mag-uuma nga walay smartphone — pangutana sa Filipino o lokal nga diyalekto, ug makadawat og tubag base sa tinuod nga datos sa uma.",
+    pitch_eyebrow: "Isugyot ang ideya", pitch_title: "Naa ka bay solusyon nga tinuod nga gikinahanglan sa mag-uuma?",
+    pitch_desc: "Nagatrabaho kami uban sa mga founder, researcher, ug estudyante sa agri-tech nga adunay nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — ug gusto kining sulayan uban sa tinuod nga kooperatiba imbes sa laboratoryo.",
+    pitch_email_note_html: "Gusto mo og email? Sulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imong ideya",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Unsang problema ang gisulbad niini, ug para kang kinsa nga mag-uuma?", pitch_submit: "Ipadala ang sugyot",
+    contact_title: "Nagatrabaho ka ba uban sa kooperatiba, LGU, ukon agribusiness?",
+    contact_desc: "Usa ka probinsya sa usa ka higayon among gi-onboard aron magpabilin nga husto ang mga modelo sa maong yuta ug panahon. Sultihi kami kon asa ka nag-uma ug unsay imong gitanom.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika sa Pilipinas"
+  },
+  ilo: {
+    nav_work: "Ti ar-aramidenmi", nav_crops: "Dagiti fokus", nav_livestock: "Ayup ken mannalon", nav_innovations: "Dagiti inobasyon", nav_pitch: "Idatag ti idea", lang_label: "Pagsasao",
+    hero_title: "Ba-basaenmi ti daga<br>tapno saanen nga agisalsalimeteg<br>dagiti mannalon.",
+    hero_subtitle: "Baliwan ti Digital Agriculture of the Philippines dagiti datos ti daga, tiempo, ken merkado a mausar a desision a mabalin nga aramiden ti mannalon wenno kooperatiba sakbay ti sumaruno a panagmula — saan a kalpasan a napukaw ti apit.",
+    hero_cta_partner: "Makikadua kadakami", hero_cta_see: "Kitaen no kasano ti panagtrabaho",
+    quote_text: "\u201cIdi, aguray dagiti desision iti panagtalon iti gimong ti barangay. Iti kanyami, aguray dagitoy iti datos.\u201d",
+    quote_reg: "One Person Corporation, narehistro idiay PH",
+    work_eyebrow: "No kasano nga agtrabahokami", work_title: "Tallo nga addang manipud iti kaadaywan a talon agingga iti desision a makagunggona.",
+    work1_tag: "01 · Riknaen", work1_title: "Pudno a datos", work1_desc: "Nalaka a sensor ti daga, kinabasa, ken tiempo a naikabil iti tunggal talon, kaduana ti satellite imagery para kadagiti talon a saan pay a nadanonan. Tunggal reading ket adda petsa ken lokasionna iti pudno a paset.",
+    work2_tag: "02 · Sukimaten", work2_title: "Lokal a modelo", work2_desc: "Modelo ti apit ken peggad ti peste a nasanay babaen kadagiti siklo ti mula idiay Filipinas, saan a imported a default — modelo ti pagay a pudno a makaammo no ania ti epekto ti bagyo iti panawen ti tudo iti talon idiay Nueva Ecija.",
+    work3_tag: "03 · Agtignay", work3_title: "Balakad nga adda iti ima", work3_desc: "SMS ken app alerts iti Filipino ken lokal a dialekto, agdaliasat kadagiti extension worker ti kooperatiba nga adda pammatida iti mannalon — ti teknolohiya ket adda iti likudan ti tao, saan nga iti sango.",
+    impact_eyebrow: "No sadino ti nagtrabahoanmi", impact_title: "Nabayagen, naka-focus, ken agtultuloy a dumakdakkel.",
+    impact1_label: "Talon nga adda aktibo a datosda", impact2_label: "Probinsia a nasakupan", impact3_label: "Avg. pannakadakkel ti apit, pilot cohort", impact4_label: "Kooperatiba a nakikadua",
+    impact_footnote: "Datos manipud kadagiti pilot deployment, 2024–2026. Ilustratibo laeng — dawaten ti kaudian nga impact report para iti mapaneknekan a datos.",
+    crops_eyebrow: "Dagiti fokus", crops_title: "Naaramid a maibatay iti pudno a maimula ditoy.",
+    crop1_title: "Pagay", crop1_desc: "Panagtiming ti pannakadanon ti danum ken alerto ti peste iti amin a panawen ti tudo ken bessang.",
+    crop2_title: "Mangga", crop2_desc: "Panagipadto ti pannakaruros ti sabong ken tiempo ti panagapit para iti prutas a mai-export.",
+    crop3_title: "Niog", crop3_desc: "Panagsubay ti atiddog a siklo ti apit ken rekomendasion iti intercropping para kadagiti bassit a mannalon.",
+    crop4_title: "Unas", crop4_desc: "Mapa ti nutrisio ti daga a direkta a nainaig iti iskedyul ti panaggiling.",
+    livestock_eyebrow: "Ayup ken mannalon", livestock_title: "Napateg ti ayup a kas iti apit.",
+    livestock_desc: "Kagudua laeng ti estoria ti datos ti mula para iti kaadduan a bassit a mannalon — ti sabali a kagudua ket adda iti likod-balay a kulungan. Sinsuruotenmi ti salun-at ti ayup ken ikonektarmi dagiti mannalon iti likudanna.",
+    ls1_title: "Baboy ken manok", ls1_desc: "Nasapa nga alerto ti outbreak ti sakit para kadagiti bassit ken backyard a agay-aywan, naaramid kalpasan ti maulit-ulit a pannakapukaw gapu iti ASF ken bird flu iti Luzon.",
+    ls2_title: "Nuang ken baka", ls2_desc: "Iskedyul ti pannangan ken panagpataud a naikari iti isu met laeng a datos ti tiempo a mangiturturong kadagiti balakad iti mula, gapu ta agpada nga sumursurot iti maymaysa a kalendario ti talon.",
+    ls3_title: "Listaan ti mannalon", ls3_desc: "Tunggal balay a katrabahoanmi ket naprofile iti maminsan — daga, ayup, ken mula — tapno dumteng dagiti balakad a maiyanatup, saan a jeneral.",
+    lsstat1_label: "Balay ti mannalon a na-profile", lsstat2_label: "Bilang ti ayup a sinursuruotan", lsstat3_label: "Balay a mangipatpataud ti mula ken ayup",
+    livestock_footnote: "Datos manipud kadagiti pilot deployment, 2024–2026. Ilustratibo laeng — dawaten ti kaudian nga impact report para iti mapaneknekan a datos.",
+    innov_eyebrow: "Dagiti inobasyon", innov_title: "Ti sumaruno nga ibangonmi para iti agrikultura ti Filipinas.",
+    innov_desc: "Adda kadagitoy nga addan idiay talon, dadduma pay pilot — amin ket sursuraten a kaduada dagiti pudno a kooperatiba sakbay a mairuar iti nalawlawa.",
+    innov1_tag: "Adda iti talon", innov1_title: "Drone crop mapping", innov1_desc: "Nababa ti panagtayab a multispectral flyover a mangmarka kadagiti nastress wenno naammuan a paset ti talon iti sumagmamano nga aldaw sakbay a makita manipud iti igid ti payew.",
+    innov2_tag: "Adda iti talon", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid a estasion ti daga ken tiempo a naaramid para kadagiti lugar nga awan ti masarigan a kuryente, agi-report babaen ti low-bandwidth a cellular a koneksion.",
+    innov3_tag: "Piloto pay laeng", innov3_title: "Blockchain traceability", innov3_desc: "Panagsubay ti produkto manipud iti talon agingga iti gumatang para iti export-grade a mangga ken niog, mangmangted kadagiti bassit a mannalon iti pammaneknek ti naggapuanna a bayadan ti gumatang iti nayon a bayad.",
+    innov4_tag: "Piloto pay laeng", innov4_title: "Balakad babaen iti timek", innov4_desc: "Maysa a call-in line para kadagiti mannalon nga awan smartphone-na — agsaludsod iti Filipino wenno lokal a dialekto, ken umawat ti sungbat a naibatay iti pudno a datos ti talon.",
+    pitch_eyebrow: "Idatag ti idea", pitch_title: "Adda kadi solusion a pudno a kasapulan dagiti mannalon?",
+    pitch_desc: "Agtrabahokami kadagiti founder, researcher, ken estudiante ti agri-tech nga adda agtrabtrabaho nga ideana — sensor, modelo, wenno distribution channel — ken kayatna a suoten daytoy kadagiti pudno a kooperatiba imbes iti laboratorio.",
+    pitch_email_note_html: "Kayat mo nga email? Suraten idiay <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Nagan", pitch_email_label: "Email", pitch_idea_label: "Ideam",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "sika@example.com", pitch_idea_ph: "Ania ti problema a nalutlutuenna, ken para kadagiti ania a mannalon?", pitch_submit: "Ipatulod ti idatag",
+    contact_title: "Agtrabtrabahoka kadi iti kooperatiba, LGU, wenno agribusiness?",
+    contact_desc: "Maysa a probinsia iti maminsan ti onboardenmi tapno agtalinaed a husto dagiti modelo iti dayta a daga ken tiempo. Ibagam no sadino ti pagtaltalonam ken ania ti immulam.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Narehistro a One Person Corporation · Republika ti Filipinas"
+  },
+  bat: {
+    nav_work: "Ginagawa namin", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", nav_pitch: "Magmungkahi ng ideya", lang_label: "Wika",
+    hero_title: "Binabasa namin ang lupa eh<br>para hindi na kailangang<br>manghula pa ang magsasaka.",
+    hero_subtitle: "Ang Digital Agriculture of the Philippines eh ginagawang desisyon ang datos ng lupa, panahon, at merkado na magagamit agad ng magsasaka o kooperatiba bago pa dumating ang susunod na taniman — hindi pagkatapos mawala ang ani, eh.",
+    hero_cta_partner: "Makipag-partner sa amin", hero_cta_see: "Tingnan kung paano gumagana",
+    quote_text: "\u201cDati eh, naghihintay ang desisyon sa pagsasaka sa miting sa barangay. Sa amin eh, naghihintay ito sa datos.\u201d",
+    quote_reg: "One Person Corporation, rehistrado sa PH",
+    work_eyebrow: "Paano kami gumagana", work_title: "Tatlong hakbang mula sa hilaw na bukid hanggang sa desisyong may kapakinabangan, eh.",
+    work1_tag: "01 · Suriin", work1_title: "Totoong datos", work1_desc: "Murang sensor ng lupa, halumigmig, at panahon na nakalagay sa bawat bukid, dagdag pa ang satellite imagery para sa mga lupang di pa naaabot. Bawat basa eh may petsa at lokasyon sa tunay na parsela.",
+    work2_tag: "02 · Suriin", work2_title: "Lokal na modelo", work2_desc: "Mga modelo ng ani at panganib sa peste na sinanay gamit ang siklo ng pananim dito sa Pilipinas, hindi yung imported na default — modelo ng palay na alam talaga ang epekto ng bagyo sa tag-ulan sa palayan ng Nueva Ecija, eh.",
+    work3_tag: "03 · Kumilos", work3_title: "Payong abot-kamay", work3_desc: "SMS at app alerts sa Filipino at mga lokal na diyalekto, dumadaan sa mga extension worker ng kooperatiba na kilala at pinagkakatiwalaan na ng magsasaka — ang teknolohiya eh nasa likod ng tao, hindi sa harapan.",
+    impact_eyebrow: "Kung saan kami nagtrabaho", impact_title: "Maaga pa lang, nakatutok, at patuloy na lumalago, eh.",
+    impact1_label: "Mga bukid na may aktibong datos", impact2_label: "Mga probinsyang sakop", impact3_label: "Avg. pagtaas ng ani, pilot cohort", impact4_label: "Mga kooperatibang sumali",
+    impact_footnote: "Datos mula sa mga pilot deployment, 2024–2026. Ilustratibo lamang — hingin niyo na lang ang pinakabagong impact report namin para sa beripikadong datos.",
+    crops_eyebrow: "Mga tinutukan", crops_title: "Ginawa base sa talagang itinatanim dito, eh.",
+    crop1_title: "Palay", crop1_desc: "Timing ng patubig at alerto sa peste sa buong tag-ulan at tag-init na taniman.",
+    crop2_title: "Mangga", crop2_desc: "Prediksyon ng pamumulaklak at oras ng pag-ani para sa prutas na pang-export.",
+    crop3_title: "Niyog", crop3_desc: "Pagsubaybay sa mahabang ani at rekomendasyon sa intercropping para sa maliliit na magsasaka.",
+    crop4_title: "Tubo", crop4_desc: "Mapping ng sustansya ng lupa na direktang naka-ugnay sa iskedyul ng paggiling.",
+    livestock_eyebrow: "Hayop at magsasaka", livestock_title: "Kasinghalaga ng ani ang kawan, eh.",
+    livestock_desc: "Kalahati lang ng kuwento ang datos ng pananim para sa karamihan ng maliliit na magsasaka — ang kalahati pa eh nasa likod-bahay na kulungan. Sinusubaybayan namin ang kalusugan ng hayop at ikinokonekta ang mga magsasaka sa likod nito.",
+    ls1_title: "Baboy at manok", ls1_desc: "Maagang alerto sa outbreak ng sakit para sa maliliit at bakuran na tagapag-alaga, ginawa matapos ang paulit-ulit na pagkalugi dahil sa ASF at bird flu sa Luzon.",
+    ls2_title: "Kalabaw at baka", ls2_desc: "Iskedyul ng pagpapakain at pagpaparami na kasabay ng parehong datos ng panahon na siyang nagtutulak sa mga payo sa pananim, dahil pareho silang sumusunod sa iisang kalendaryo ng bukid.",
+    ls3_title: "Talaan ng magsasaka", ls3_desc: "Bawat sambahayang katrabaho namin eh minsanang pino-profile — lupa, kawan, at pananim — para umabot ang payo nang angkop, hindi pangkalahatan.",
+    lsstat1_label: "Sambahayan ng magsasakang na-profile", lsstat2_label: "Bilang ng hayop na sinusubaybayan", lsstat3_label: "Sambahayang nagpapalago ng pananim at hayop",
+    livestock_footnote: "Datos mula sa mga pilot deployment, 2024–2026. Ilustratibo lamang — hingin niyo na lang ang pinakabagong impact report namin para sa beripikadong datos.",
+    innov_eyebrow: "Mga inobasyon", innov_title: "Ang susunod naming binubuo para sa agrikultura ng Pilipinas.",
+    innov_desc: "Ang iba dito eh nasa bukid na, ang iba naman eh pilot pa — lahat sinusubok kasama ang tunay na kooperatiba bago pa man ilunsad nang mas malawakan.",
+    innov1_tag: "Nasa bukid na", innov1_title: "Drone crop mapping", innov1_desc: "Mababang-lipad na multispectral flyover na tumutukoy sa mga bahaging naiipit o binabaha bago pa ito makita mula sa gilid ng palayan.",
+    innov2_tag: "Nasa bukid na", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid na estasyon ng lupa at panahon na ginawa para sa mga lugar na walang maaasahang kuryente, umuulat gamit ang low-bandwidth cellular connection.",
+    innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubaybay ng produkto mula bukid hanggang sa mamimili para sa export-grade na mangga at niyog, nagbibigay sa maliliit na magsasaka ng patunay ng pinagmulan na sinusuklian ng mamimili ng dagdag na presyo.",
+    innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
+    pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
+    pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
+    pitch_email_note_html: "Mas gusto niyo ba email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Ang ideya mo",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
+    contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
+    contact_desc: "Isang probinsya lang ang tinatanggap namin sa isang pagkakataon para manatiling tumpak ang mga modelo sa lupa at panahon doon. Sabihin niyo na lang sa amin kung saan kayo nagsasaka at ano ang itinatanim niyo.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika ng Pilipinas"
+  },
+  hil: {
+    nav_work: "Ang amon ginahimo", nav_crops: "Mga fokus", nav_livestock: "Kasapatan kag mangunguma", nav_innovations: "Mga inobasyon", nav_pitch: "Isugyot ang ideya", lang_label: "Lenggwahe",
+    hero_title: "Ginabasa namon ang duta<br>agud indi na kinahanglan<br>mag-ilog ang mangunguma.",
+    hero_subtitle: "Ginahimo sang Digital Agriculture of the Philippines ang datos sang duta, tiempo, kag merkado nga mga desisyon nga sarang mahimo sang mangunguma ukon kooperatiba sa wala pa mag-abot ang masunod nga pagtanom — indi pagkatapos madula ang ani.",
+    hero_cta_partner: "Makig-partner sa amon", hero_cta_see: "Tan-awa kon paano ini nagatrabaho",
+    quote_text: "\u201cSadto, ang desisyon sa pagpanguma nagahulat sa miting sang barangay. Sa amon, nagahulat ini sa datos.\u201d",
+    quote_reg: "One Person Corporation, rehistrado sa PH",
+    work_eyebrow: "Kon paano kami nagatrabaho", work_title: "Tatlo ka lakang gikan sa hilaw nga uma pakadto sa desisyon nga may pulos.",
+    work1_tag: "01 · Tuki", work1_title: "Matuod nga datos", work1_desc: "Barato nga sensor sang duta, kabasa, kag tiempo nga gin-instalar sa kada uma, dugang pa ang satellite imagery para sa mga lugar nga wala pa maabot. Ang kada reading may petsa kag lokasyon sa matuod nga parsela.",
+    work2_tag: "02 · Usisaon", work2_title: "Lokal nga modelo", work2_desc: "Mga modelo sang ani kag peligro sa peste nga gin-training gamit ang siklo sang tanom sa Pilipinas, indi ang imported nga default — isa ka modelo sang humay nga matuod nga nakahibalo kon ano ang epekto sang bagyo sa tig-ululan sa umahan sang Nueva Ecija.",
+    work3_tag: "03 · Himua", work3_title: "Laygay nga abot-kamot", work3_desc: "SMS kag app alerts sa Filipino kag lokal nga dialekto, agi sa mga extension worker sang kooperatiba nga ginasaligan na sang mangunguma — ang teknolohiya yara sa likod, indi sa atubang.",
+    impact_eyebrow: "Diin kami nagtrabaho", impact_title: "Aga pa, focused, kag padayon nga nagatubo.",
+    impact1_label: "Mga uma nga may aktibo nga datos", impact2_label: "Mga probinsya nga sakop", impact3_label: "Avg. pagtaas sang ani, pilot cohort", impact4_label: "Mga kooperatiba nga nag-apil",
+    impact_footnote: "Datos halin sa mga pilot deployment, 2024–2026. Ilustratibo lang — pangayua ang amon pinakabag-o nga impact report para sa na-verify nga datos.",
+    crops_eyebrow: "Mga fokus", crops_title: "Ginhimo base sa matuod nga gina-tanom diri.",
+    crop1_title: "Humay", crop1_desc: "Timing sang pagpatubig kag alerto sa peste sa bug-os nga tig-ululan kag tig-init nga pagtanom.",
+    crop2_title: "Mangga", crop2_desc: "Prediksyon sang pagpamukadkad kag oras sang pag-ani para sa bunga nga para i-export.",
+    crop3_title: "Lubi", crop3_desc: "Pagsubay sang malawig nga siklo sang ani kag rekomendasyon sa intercropping para sa gagmay nga mangunguma.",
+    crop4_title: "Tubo", crop4_desc: "Mapa sang sustansya sang duta nga direkta nga konektado sa iskedyul sang paggaling.",
+    livestock_eyebrow: "Kasapatan kag mangunguma", livestock_title: "Importante man ang panong pareho sang ani.",
+    livestock_desc: "Katunga lang sang istorya ang datos sang tanom para sa kalabanan nga gagmay nga panimalay — ang isa ka katunga yara sa likod-balay nga kulungan. Ginasubay namon ang kalain-lain sang kasapatan kag ginakonekta ang mga mangunguma sa likod sini.",
+    ls1_title: "Baboy kag manok", ls1_desc: "Aga nga alerto sa outbreak sang balatian para sa gagmay kag backyard nga nagaalaga, ginhimo pagkatapos sang pila-pila ka kadulaan bangod sa ASF kag bird flu sa Luzon.",
+    ls2_title: "Kalabaw kag baka", ls2_desc: "Iskedyul sang pagpakaon kag pagsanay nga gin-pares sa amo man nga datos sang tiempo nga nagatuytoy sa mga laygay sa tanom, kay pareho sila nagasunod sa isa lang ka kalendaryo sang uma.",
+    ls3_title: "Listahan sang mangunguma", ls3_desc: "Ang kada panimalay nga amon ginabuligan gina-profile isa lang ka beses — duta, panong, kag tanom — agud ang laygay mag-abot nga nagakabagay, indi kinatibuk-an.",
+    lsstat1_label: "Mga panimalay sang mangunguma nga na-profile", lsstat2_label: "Kadamuon sang kasapatan nga ginasubay", lsstat3_label: "Panimalay nga nagapasanay sang tanom kag kasapatan",
+    livestock_footnote: "Datos halin sa mga pilot deployment, 2024–2026. Ilustratibo lang — pangayua ang amon pinakabag-o nga impact report para sa na-verify nga datos.",
+    innov_eyebrow: "Mga inobasyon", innov_title: "Ang amon masunod nga ginahimo para sa agrikultura sang Pilipinas.",
+    innov_desc: "Ang pila sini yara na sa uma, ang iban pilot pa — tanan ginatestingan kaupod sang matuod nga kooperatiba antes pa ini iluwas sing mas malapad.",
+    innov1_tag: "Yara na sa uma", innov1_title: "Drone crop mapping", innov1_desc: "Manubo nga paglupad nga multispectral flyover nga nagatimaan sang stressed ukon baha nga bahin sang uma pila ka adlaw antes pa ini makita halin sa kilid sang uma.",
+    innov2_tag: "Yara na sa uma", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid nga estasyon sang duta kag tiempo nga ginhimo para sa mga lugar nga wala sing masaligan nga kuryente, nagareport paagi sa low-bandwidth nga cellular nga koneksyon.",
+    innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubay sang produkto halin sa uma pakadto sa manugbakal para sa export-grade nga mangga kag lubi, nagahatag sa gagmay nga mangunguma sang pamatuod sang ginhalinan nga ginabayaran sang manugbakal sang dugang nga presyo.",
+    innov4_tag: "Pilot pa", innov4_title: "Laygay paagi sa tingog", innov4_desc: "Isa ka call-in line para sa mangunguma nga wala sing smartphone — magpamangkot sa Filipino ukon lokal nga dialekto, kag makabaton sang sabat nga base sa matuod nga datos sang uma.",
+    pitch_eyebrow: "Isugyot ang ideya", pitch_title: "May solusyon ka bala nga matuod nga kinahanglan sang mangunguma?",
+    pitch_desc: "Nagatrabaho kami kaupod sang mga founder, researcher, kag estudyante sang agri-tech nga may nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — kag gusto ini testingan kaupod sang matuod nga kooperatiba sa baylo sang laboratoryo.",
+    pitch_email_note_html: "Gusto mo bala email? Sulati ang <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imo ideya",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Ano nga problema ang ginasolusyunan sini, kag para kay sin-o nga mangunguma?", pitch_submit: "Ipadala ang sugyot",
+    contact_title: "Nagatrabaho ka bala kaupod sang kooperatiba, LGU, ukon agribusiness?",
+    contact_desc: "Isa lang ka probinsya sa isa ka tion ang amon ginaonboard agud magpabilin nga husto ang mga modelo sa sina nga duta kag tiempo. Sugiri kami kon diin ka nagapanguma kag ano ang imo gina-tanom.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistrado nga One Person Corporation · Republika sang Pilipinas"
+  },
+  pam: {
+    nav_work: "Ing gagawan mi", nav_crops: "Deng focus", nav_livestock: "Ayup at talapagobra", nav_innovations: "Deng inobasyon", nav_pitch: "Ibye ing idea", lang_label: "Amanu",
+    hero_title: "Babasan mi ing gabun<br>ban ali na kailangan<br>mamagulan ing talasaka.",
+    hero_subtitle: "Ing Digital Agriculture of the Philippines mikagawa keng datos ning gabun, panaun, at merkadu deng desisyon a magagamit karas talasaka o kooperatiba bayu datang ing kasunuran a pamamula — ali kaibat mawala ing ani.",
+    hero_cta_partner: "Makipag-partner kekami", hero_cta_see: "Lawan nung pano ya gagawa",
+    quote_text: "\u201cKanita, e pekasabyan deng desisyon king pamamana king pisulip da ring taga-barangay. Kekami, e la mimisan king datos.\u201d",
+    quote_reg: "One Person Corporation, rehistradu king PH",
+    work_eyebrow: "Nung pano kami gagawa", work_title: "Atlung addang manibat king kabaldugan a bukid anggang king desisyon a mika-pakinabang.",
+    work1_tag: "01 · Lawan", work1_title: "Tutu a datos", work1_desc: "Mura yang sensor ning gabun, ubi, at panaun a nailagay king kada bukid, dagdag ing satellite imagery para karing gabun a e pa marerakit. Kada reading atin yang petsa at lokasyon king tutuang parsela.",
+    work2_tag: "02 · Susyan", work2_title: "Lokal a modelo", work2_desc: "Deng modelo ning ani at peligru king peste a mikasanay king siklo ning tanaman king Pilipinas, e deng imported a default — metung yang modelong palay a tutu yang balu nung ninu ing epektu ning bagyu king panaun ning uran king palayan ning Nueva Ecija.",
+    work3_tag: "03 · Gawan", work3_title: "Pamaglagyo a marapit", work3_desc: "SMS at app alerts king Filipino at lokal a dialekto, mangagi karing extension worker ning kooperatiba a atin ne pamagsalig ning talasaka — ing teknolohiya ket wala king gulut, e king arapan.",
+    impact_eyebrow: "Nung nokarin kami gumawa", impact_title: "Masaisang pa, focused, at mekakuyad pang mika-lako.",
+    impact1_label: "Bukid a atin aktibong datos", impact2_label: "Probinsya a nasakupan", impact3_label: "Avg. pamikalako ning ani, pilot cohort", impact4_label: "Kooperatiba a mikisali",
+    impact_footnote: "Datos manibat karing pilot deployment, 2024–2026. Ilustratibo mu — dalanan ing kekaming pekabayung impact report para king mapaneknekan a datos.",
+    crops_eyebrow: "Deng focus", crops_title: "Migawa base king tutu a mamula keni.",
+    crop1_title: "Pale", crop1_desc: "Timing ning irigasyon at alerto king peste king kabuuan ning panaun ning uran at aldo.",
+    crop2_title: "Mangga", crop2_desc: "Predikto ning pamimulaklak at oras ning pamamupul para karing prutas a i-export.",
+    crop3_title: "Ngungut", crop3_desc: "Pamanyubay king malaut a siklo ning ani at rekomendasyon king intercropping para karing kekeng talasaka.",
+    crop4_title: "Tubu", crop4_desc: "Mapa ning nutrisyon ning gabun a direktang mikakabit king iskedyul ning panggiling.",
+    livestock_eyebrow: "Ayup at talapagobra", livestock_title: "Kabaldugan ing kawan anti ing ani.",
+    livestock_desc: "Kalati mu ning istorya ing datos ning tanaman para king mayumu karing kekeng talasaka — ing aliwa kalati atiu king gulut-bale a kulungan. Sinusubaybayan mi ing kasalukuyan ning ayup at ikinokonekta deng talasaka a atiu king gulut na.",
+    ls1_title: "Babi at manuk", ls1_desc: "Masaisan a alerto king outbreak ning masakit para karing malati at backyard a talapagaral, migawa kaibat ning miyulit-ulit a pamikawala uli ning ASF at bird flu king Luzon.",
+    ls2_title: "Kalabaw at baka", ls2_desc: "Iskedyul ning pamamakan at pamipasanay a mikapares king anti ing datos ning panaun a mangituturu karing pamagsabi king tanaman, uling parehas lang sinusundan deng metung a kalendaryo ning bukid.",
+    ls3_title: "Listahan ning talasaka", ls3_desc: "Kada bale a kekaming katrabajo, migawa yang minsan a profile — gabun, kawan, at tanaman — ban datang deng pamagsabi a mika-akma, e general.",
+    lsstat1_label: "Bale ning talasaka a mi-profile", lsstat2_label: "Bilang ning ayup a sinusubaybayan", lsstat3_label: "Bale a mamipasanay king tanaman at ayup",
+    livestock_footnote: "Datos manibat karing pilot deployment, 2024–2026. Ilustratibo mu — dalanan ing kekaming pekabayung impact report para king mapaneknekan a datos.",
+    innov_eyebrow: "Deng inobasyon", innov_title: "Ing kasunuran mikakagawa mi para king agrikultura ning Pilipinas.",
+    innov_desc: "Deng aliwa keti atiu na king bukid, deng aliwa piloto pa — deng anggang mikasubok la kareng tutuang kooperatiba bayu ila ipalako king mas malapad.",
+    innov1_tag: "Atiu king bukid", innov1_title: "Drone crop mapping", innov1_desc: "Mababang paglayad a multispectral flyover a mangatandanan karing stressed o miyulanan a parti ning bukid bayu la ne malawan manibat king gilid ning palayan.",
+    innov2_tag: "Atiu king bukid", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid a estasyon ning gabun at panaun a migawa para karing lugar a alang masaligan a koryente, mag-report gamit ing mababang-bandwidth a cellular a koneksyon.",
+    innov3_tag: "Piloto pa", innov3_title: "Blockchain traceability", innov3_desc: "Pamanyubay king produktu manibat king bukid anggang king mamiaus para king export-grade a mangga at ngungut, mibibye karing malati a talasaka ning pamaneknek ning kayarian a babayaran deng mamiaus ning dagdag a bayad.",
+    innov4_tag: "Piloto pa", innov4_title: "Pamagsabi liwat king voice", innov4_desc: "Metung yang call-in line para karing talasaka a alang smartphone — mitanong king Filipino o lokal a dialekto, at manalo yang sagut a base king tutuang datos king bukid.",
+    pitch_eyebrow: "Ibye ing idea", pitch_title: "Atin ka bang solusyon a tutu yang kailangan ning talasaka?",
+    pitch_desc: "Makikayabe kami karing founder, researcher, at estudyanteng agri-tech a atin gagawang idea — sensor, modelo, o distribution channel — at buri lang subukan ini kareng tutuang kooperatiba imbes king laboratoryo.",
+    pitch_email_note_html: "Buri mu email? Sulat king <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
+    pitch_name_label: "Lagyu", pitch_email_label: "Email", pitch_idea_label: "Ing idea mu",
+    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ika@example.com", pitch_idea_ph: "Nanung problema ing sasabli na, at para karing nanung talasaka?", pitch_submit: "Ipadala ing pamagsulat",
+    contact_title: "Makikayabe ka la keng kooperatiba, LGU, o agribusiness?",
+    contact_desc: "Metung mung probinsya king metung a pagkakataon ing kekaming onboard ban mapanatili ing katutuan da reng modelo king dyan a gabun at panaun. Sabyan mu kekami nung nokarin ka nagobra at nanung mumula mu.",
+    contact_label: "Digital Agriculture of the Philippines OPC",
+    footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradung One Person Corporation · Republika ning Pilipinas"
+  }
+};
+
+const defaultText = {};
+document.querySelectorAll('[data-i18n]').forEach(el => defaultText[el.getAttribute('data-i18n')] = el.textContent);
+document.querySelectorAll('[data-i18n-html]').forEach(el => defaultText[el.getAttribute('data-i18n-html')] = el.innerHTML);
+const defaultPlaceholders = {};
+document.querySelectorAll('[data-i18n-placeholder]').forEach(el => defaultPlaceholders[el.getAttribute('data-i18n-placeholder')] = el.getAttribute('placeholder'));
+
+function setLanguage(lang){
+  const dict = translations[lang] || {};
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.textContent = dict[key] || defaultText[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    el.innerHTML = dict[key] || defaultText[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    el.setAttribute('placeholder', dict[key] || defaultPlaceholders[key]);
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-option').forEach(a => {
+    a.removeAttribute('aria-current');
+    if(a.getAttribute('data-lang') === lang) a.setAttribute('aria-current', 'true');
+  });
+  try{ localStorage.setItem('dapo_lang', lang); }catch(e){}
+  const menu = document.getElementById('langMenu');
+  if(menu) menu.removeAttribute('open');
+}
+
+document.querySelectorAll('.lang-option').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    setLanguage(a.getAttribute('data-lang'));
+  });
+});
+
+let savedLang = 'en';
+try{ savedLang = localStorage.getItem('dapo_lang') || 'en'; }catch(e){}
+setLanguage(savedLang);
+</script>
 
 </body>
 </html>
