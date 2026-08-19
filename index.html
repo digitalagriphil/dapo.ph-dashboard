@@ -181,6 +181,58 @@ body.dark-mode .ai-msg.bot{background:#1B3322;color:#EAF3E1}
   .ai-chat-panel.open{animation:none!important}
 }
 
+
+/* Mobile header spacing fix */
+header {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  box-sizing: border-box;
+}
+
+header > div {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  box-sizing: border-box;
+}
+
+.brand-wrap {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 1.15 !important;
+}
+
+.brand-name {
+  line-height: 1.15 !important;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  header {
+    min-height: 76px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  header > div {
+    min-height: 60px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+
+  .brand-wrap {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  .brand-name {
+    line-height: 1.2 !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+}
+
 </style>
 </head>
 <body class="antialiased">
@@ -501,10 +553,10 @@ body.dark-mode .ai-msg.bot{background:#1B3322;color:#EAF3E1}
 </footer>
 
 <!-- Floating AI Agent -->
-<div id="aiChatPanel" class="ai-chat-panel" aria-hidden="true" role="dialog" aria-label="QOSKO AI Agent">
+<div id="aiChatPanel" class="ai-chat-panel" aria-hidden="true" role="dialog" aria-label="DAPO AI Agent">
   <div class="flex items-start justify-between gap-3">
     <div>
-      <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#4C6B47]">QOSKO AI AGENT</p>
+      <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#4C6B47]">DAPO AI AGENT</p>
       <h3 class="font-display text-2xl mt-1">How can I help?</h3>
     </div>
     <button id="aiChatClose" class="ai-chat-close" type="button" aria-label="Close AI Agent">×</button>
@@ -518,8 +570,8 @@ body.dark-mode .ai-msg.bot{background:#1B3322;color:#EAF3E1}
   <p class="mt-3 text-[10px] opacity-50">Choose a question to get an automatic answer.</p>
 </div>
 <div class="ai-agent" aria-label="AI Agent">
-  <div class="ai-agent-label">Ask QOSKO AI</div>
-  <button id="aiChatButton" class="ai-agent-button" type="button" aria-label="Open QOSKO AI Agent" aria-expanded="false" title="QOSKO AI Agent">
+  <div class="ai-agent-label">Ask DAPO AI</div>
+  <button id="aiChatButton" class="ai-agent-button" type="button" aria-label="Open DAPO AI Agent" aria-expanded="false" title="DAPO AI Agent">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-4 2v-4.2A7.5 7.5 0 1 1 20 11.5Z"/>
       <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/>
@@ -917,7 +969,7 @@ darkModeToggle?.addEventListener('click', () => {
   updateThemeIcon();
 });
 
-// QOSKO AI Agent — clickable questions + 3-minute idle close
+// DAPO AI Agent — clickable questions + 3-minute idle close
 const aiChatButton = document.getElementById('aiChatButton');
 const aiChatPanel = document.getElementById('aiChatPanel');
 const aiChatClose = document.getElementById('aiChatClose');
