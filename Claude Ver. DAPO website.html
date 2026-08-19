@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Agriculture of the Philippines OPC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --gold:#C99A3D;
+    --mud:#1F3327;
+    --paddy:#4C6B47;
+    --cream:#EAF3E1;
+    --irrigation:#2E5266;
+    --husk:#CFE3C2;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--cream); color:var(--mud); font-family:'Inter',sans-serif;}
+  .font-display{font-family:'Fraunces',serif;}
+  .font-mono{font-family:'IBM Plex Mono',monospace;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  .contour path{fill:none; stroke:var(--gold); stroke-width:1.4; opacity:0.55;}
+  .contour path:nth-child(2){stroke:var(--paddy); opacity:0.45;}
+  .contour path:nth-child(3){stroke:var(--irrigation); opacity:0.4;}
+  .fade-in{opacity:0; transform:translateY(14px); animation:fadeUp 0.7s ease forwards;}
+  @keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+  .pillar-card{transition:border-color 0.25s ease, transform 0.25s ease;}
+  .pillar-card:hover{transform:translateY(-3px);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--irrigation); outline-offset:3px;}
+</style>
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-[#1F3327]/10 bg-[#EAF3E1]/90 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="font-display text-lg tracking-tight">Digital&nbsp;Agriculture</span>
+      <span class="font-mono text-[11px] text-[#1F3327]/50 hidden sm:inline">PH · OPC</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#work" class="hover:text-[#4C6B47] transition-colors">What we do</a>
+      <a href="#crops" class="hover:text-[#4C6B47] transition-colors">Focus areas</a>
+      <a href="#livestock" class="hover:text-[#4C6B47] transition-colors">Livestock &amp; farmers</a>
+      <a href="#innovations" class="hover:text-[#4C6B47] transition-colors">Innovations</a>
+      <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors">Pitch an idea</a>
+    </nav>
+  </div>
+</header>
+
+<section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+  <div class="absolute inset-0 contour pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 1400 700" class="w-full h-full opacity-70" preserveAspectRatio="none">
+      <path d="M-50,560 C 200,540 340,600 520,560 S 900,480 1100,540 1250,580 1450,540" />
+      <path d="M-50,480 C 220,450 360,520 540,470 S 920,400 1120,460 1260,500 1450,460" />
+      <path d="M-50,400 C 240,380 380,430 560,390 S 940,330 1140,380 1270,410 1450,380" />
+      <path d="M-50,320 C 260,310 400,340 580,320 S 960,280 1160,310 1280,330 1450,310" />
+    </svg>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-6 md:px-10">
+    <p class="fade-in font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-6" style="animation-delay:0.05s">Nueva Ecija · Isabela · Ilocos · Batangas · Marinduque</p>
+    <h1 class="fade-in font-display text-[13vw] leading-[0.95] md:text-7xl md:leading-[0.95] max-w-4xl" style="animation-delay:0.15s">
+      We read the land<br>so farmers don't<br>have to guess.
+    </h1>
+    <p class="fade-in mt-8 max-w-xl text-[17px] leading-relaxed text-[#1F3327]/80" style="animation-delay:0.3s">
+      Digital Agriculture of the Philippines turns soil readings, weather patterns, and market signals into decisions a farmer or cooperative can act on before the next planting season — not after the harvest is already lost.
+    </p>
+    <div class="fade-in mt-10 flex flex-wrap items-center gap-4" style="animation-delay:0.4s">
+      <a href="#contact" class="px-6 py-3 rounded-full bg-[#1F3327] text-[#EAF3E1] text-sm font-medium hover:bg-[#4C6B47] transition-colors">Partner with us</a>
+      <a href="#work" class="px-6 py-3 rounded-full border border-[#1F3327]/25 text-sm font-medium hover:border-[#1F3327]/60 transition-colors">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-[#1F3327]/10 bg-[#DCEACB]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-6 flex flex-wrap gap-x-10 gap-y-2 items-center justify-between text-sm text-[#1F3327]/70">
+    <p class="font-display italic text-base text-[#1F3327]">"Farming decisions used to wait for the barangay meeting. Ours wait for the data."</p>
+    <p class="font-mono text-xs shrink-0">One Person Corporation, registered PH</p>
+  </div>
+</section>
+
+<section id="work" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
+  <div class="max-w-2xl mb-16">
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">How we work</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight">Three steps between raw field and a decision that pays off.</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
+      <span class="font-mono text-xs text-[#C99A3D]">01 · Sense</span>
+      <h3 class="font-display text-2xl mt-3 mb-3">Ground truth</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed">Low-cost soil, moisture, and weather sensors deployed field-by-field, plus satellite imagery for the plots we can't wire up yet. Every reading is timestamped and geotagged to the actual parcel.</p>
+    </div>
+    <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
+      <span class="font-mono text-xs text-[#4C6B47]">02 · Analyze</span>
+      <h3 class="font-display text-2xl mt-3 mb-3">Local models</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed">Yield and pest-risk models trained on Philippine crop cycles, not imported defaults — a palay model that actually knows what a wet-season typhoon does to a Nueva Ecija paddy.</p>
+    </div>
+    <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/40">
+      <span class="font-mono text-xs text-[#2E5266]">03 · Act</span>
+      <h3 class="font-display text-2xl mt-3 mb-3">In-hand advisory</h3>
+      <p class="text-sm text-[#1F3327]/75 leading-relaxed">SMS and app alerts in Filipino and regional dialects, routed through cooperative extension workers who already have the farmer's trust — the tech stays behind the person, not in front.</p>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="bg-[#1F3327] text-[#EAF3E1]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28">
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4">Where we've worked</p>
+    <h2 class="font-display text-3xl md:text-4xl max-w-xl mb-16">Early, focused, and still growing.</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+      <div>
+        <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">1,240</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2">Farms with active field data</p>
+      </div>
+      <div>
+        <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">4</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2">Provinces under coverage</p>
+      </div>
+      <div>
+        <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">18%</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2">Avg. yield gain, pilot cohort</p>
+      </div>
+      <div>
+        <p class="font-mono text-4xl md:text-5xl text-[#C99A3D]">37</p>
+        <p class="text-sm text-[#EAF3E1]/65 mt-2">Cooperatives onboarded</p>
+      </div>
+    </div>
+    <p class="font-mono text-[11px] text-[#EAF3E1]/40 mt-10">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
+  </div>
+</section>
+
+<section id="crops" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
+  <div class="max-w-2xl mb-16">
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Focus areas</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight">Built around what's actually grown here.</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
+      <h3 class="font-display text-xl mb-2">Palay</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Irrigation timing and pest-pressure alerts across wet and dry season plantings.</p>
+    </div>
+    <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
+      <h3 class="font-display text-xl mb-2">Mango</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Flower-induction and harvest-window forecasting for export-grade fruit.</p>
+    </div>
+    <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
+      <h3 class="font-display text-xl mb-2">Coconut</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Long-cycle yield tracking and intercropping recommendations for smallholders.</p>
+    </div>
+    <div class="rounded-2xl p-6 bg-[#CFE3C2]/50 border border-[#1F3327]/10">
+      <h3 class="font-display text-xl mb-2">Sugarcane</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Soil nutrient mapping tied directly to milling schedules.</p>
+    </div>
+  </div>
+</section>
+
+<section id="livestock" class="bg-[#DCEACB]/60 border-y border-[#1F3327]/10">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
+    <div class="max-w-2xl mb-16">
+      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Livestock &amp; farmers</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight">The herd matters as much as the harvest.</h2>
+      <p class="mt-6 text-[#1F3327]/75 leading-relaxed">Crop data tells half the story for most smallholder households — the other half is walking around the backyard pen. We track livestock health and connect the farmers behind both.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-14">
+      <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
+        <h3 class="font-display text-2xl mb-3">Swine &amp; poultry</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Early disease-outbreak alerts for backyard and small commercial raisers, built after repeated ASF and avian flu losses across Luzon.</p>
+      </div>
+      <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
+        <h3 class="font-display text-2xl mb-3">Carabao &amp; cattle</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Feeding and breeding schedules paired with the same weather data driving the crop-side advisories, since both share the same farm calendar.</p>
+      </div>
+      <div class="pillar-card border border-[#1F3327]/12 rounded-2xl p-8 bg-white/50">
+        <h3 class="font-display text-2xl mb-3">Farmer registry</h3>
+        <p class="text-sm text-[#1F3327]/75 leading-relaxed">Every household we work with is profiled once — land, herd, and crop — so advisories arrive relevant instead of generic.</p>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-[#1F3327]/12 bg-white/50 p-8 md:p-10 grid sm:grid-cols-3 gap-8">
+      <div>
+        <p class="font-mono text-3xl text-[#4C6B47]">2,900</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2">Farmer households profiled</p>
+      </div>
+      <div>
+        <p class="font-mono text-3xl text-[#4C6B47]">6,100</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2">Livestock heads under monitoring</p>
+      </div>
+      <div>
+        <p class="font-mono text-3xl text-[#4C6B47]">62%</p>
+        <p class="text-sm text-[#1F3327]/70 mt-2">Households raising both crops and livestock</p>
+      </div>
+    </div>
+    <p class="font-mono text-[11px] text-[#1F3327]/40 mt-6">Figures from pilot deployments, 2024–2026. Illustrative — request our latest impact report for verified data.</p>
+  </div>
+</section>
+
+<section id="innovations" class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-32">
+  <div class="max-w-2xl mb-16">
+    <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#4C6B47] mb-4">Innovations</p>
+    <h2 class="font-display text-4xl md:text-5xl leading-tight">What we're building next for Philippine agriculture.</h2>
+    <p class="mt-6 text-[#1F3327]/75 leading-relaxed max-w-xl">Some of these are already in the field, others are pilots — all are being tested with real cooperatives before they go anywhere near a wider rollout.</p>
+  </div>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
+      <span class="font-mono text-xs text-[#2E5266]">In the field</span>
+      <h3 class="font-display text-xl mt-2 mb-2">Drone crop mapping</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Low-altitude multispectral flyovers flag stressed or flooded sections of a field days before they're visible from the paddy edge.</p>
+    </div>
+    <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
+      <span class="font-mono text-xs text-[#2E5266]">In the field</span>
+      <h3 class="font-display text-xl mt-2 mb-2">Solar sensor stations</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Off-grid soil and weather stations built for areas without reliable power, reporting over low-bandwidth cellular links.</p>
+    </div>
+    <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
+      <span class="font-mono text-xs text-[#C99A3D]">Piloting</span>
+      <h3 class="font-display text-xl mt-2 mb-2">Blockchain traceability</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">Farm-to-buyer product tracing for export-grade mango and coconut, giving smallholders proof of origin buyers pay a premium for.</p>
+    </div>
+    <div class="rounded-2xl p-7 border border-[#1F3327]/12 bg-[#CFE3C2]/40">
+      <span class="font-mono text-xs text-[#C99A3D]">Piloting</span>
+      <h3 class="font-display text-xl mt-2 mb-2">Voice-based advisory</h3>
+      <p class="text-sm text-[#1F3327]/70 leading-relaxed">A call-in line for farmers without smartphones — ask a question in Filipino or a regional dialect, get an answer grounded in local field data.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pitch" class="bg-[#1F3327] text-[#EAF3E1]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid lg:grid-cols-2 gap-14">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4">Pitch an idea</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Got a solution farmers actually need?</h2>
+      <p class="text-[#EAF3E1]/75 leading-relaxed max-w-md">We work with founders, researchers, and agri-tech students who have a working idea — a sensor, a model, a distribution channel — and want to test it with real cooperatives instead of a lab.</p>
+      <p class="text-[#EAF3E1]/50 text-sm mt-8">Prefer email? Write to <a href="mailto:pitch@digitalagri.ph" class="underline hover:text-[#C99A3D]">pitch@digitalagri.ph</a></p>
+    </div>
+    <form action="mailto:pitch@digitalagri.ph" method="post" enctype="text/plain" class="flex flex-col gap-4">
+      <div>
+        <label for="pitch-name" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Name</label>
+        <input id="pitch-name" name="name" type="text" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="Juan Dela Cruz">
+      </div>
+      <div>
+        <label for="pitch-email" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Email</label>
+        <input id="pitch-email" name="email" type="email" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="you@example.com">
+      </div>
+      <div>
+        <label for="pitch-idea" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2">Your idea</label>
+        <textarea id="pitch-idea" name="idea" required rows="4" class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="What problem does it solve, and for which farmers?"></textarea>
+      </div>
+      <button type="submit" class="mt-2 px-6 py-3.5 rounded-full bg-[#C99A3D] text-[#1F3327] font-medium hover:bg-[#EAF3E1] transition-colors">Send pitch</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="border-t border-[#1F3327]/10">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid md:grid-cols-2 gap-12 items-end">
+    <div>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Working with a cooperative, an LGU, or an agribusiness?</h2>
+      <p class="text-[#1F3327]/75 leading-relaxed max-w-md">We onboard one province at a time so the models stay accurate to that soil and season. Tell us where you farm and what you're growing.</p>
+    </div>
+    <div class="flex flex-col gap-3 md:items-end">
+      <a href="mailto:hello@digitalagri.ph" class="w-full md:w-auto text-center px-7 py-3.5 rounded-full bg-[#1F3327] text-[#EAF3E1] font-medium hover:bg-[#4C6B47] transition-colors">hello@digitalagri.ph</a>
+      <p class="font-mono text-xs text-[#1F3327]/50">Digital Agriculture of the Philippines OPC</p>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-[#1F3327]/10 bg-[#DCEACB]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-8 flex flex-wrap justify-between items-center gap-4 text-xs text-[#1F3327]/55 font-mono">
+    <p>© 2026 Digital Agriculture of the Philippines OPC</p>
+    <p>Registered One Person Corporation · Republic of the Philippines</p>
+  </div>
+</footer>
+
+</body>
+</html>
