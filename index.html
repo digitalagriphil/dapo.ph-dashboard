@@ -1519,18 +1519,6 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleAI(false);});
 </script>
 
 
-// Mobile language menu: always reopen at the top so English and Tagalog are immediately visible.
-(function(){
-  const menu=document.getElementById('langMenu');
-  if(!menu) return;
-  menu.addEventListener('toggle',function(){
-    if(menu.open){
-      const list=menu.querySelector(':scope > div');
-      if(list) list.scrollTop=0;
-    }
-  });
-})();
-
 <script id="language-menu-reset-final">
 (function () {
   const menu = document.getElementById('langMenu');
