@@ -645,6 +645,41 @@ header > div {
 }
 </style>
 
+
+<style id="mobile-region-subtitle-5x">
+@media (max-width: 767px) {
+  /* Give the regional subtitle beneath the brand substantially more
+     breathing room so all province names remain visible. */
+  header .brand-wrap > div:last-child {
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    line-height: 1.45 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-provinces-top-margin-only">
+@media (max-width: 767px) {
+  /* Add space ABOVE the five-province subtitle only. */
+  header .brand-wrap > div:last-child {
+    margin-top: 56px !important;
+    margin-bottom: 0 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-provinces-top-margin-5x-more">
+@media (max-width: 767px) {
+  /* 5x more top spacing above the five-province line only. */
+  header .brand-wrap > div:last-child {
+    margin-top: 280px !important;
+    margin-bottom: 0 !important;
+  }
+}
+</style>
+
 </head>
 <body class="antialiased">
 
