@@ -639,7 +639,7 @@ header > div {
 @media (max-width: 767px) {
   /* Make only the Digital Agri Philippines brand text larger. */
   header .brand-name {
-    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    font-size: clamp(1.35rem, 6vw, 3rem) !important;
     line-height: 1.1 !important;
   }
 }
@@ -680,6 +680,28 @@ header > div {
 }
 </style>
 
+
+<style id="mobile-province-visibility-final">
+@media (max-width: 767px) {
+  /* Keep Digital Agri Philippines compact, but give the province names enough room. */
+  header .brand-wrap {
+    margin-bottom: 26px !important;
+  }
+
+  /* Move the five provinces slightly lower so they remain visible on mobile. */
+  header .brand-wrap > div:last-child {
+    margin-top: 120px !important;
+    margin-bottom: 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Prevent the large header padding overrides from pushing the provinces off-screen. */
+  header > div {
+    padding-top: 40px !important;
+    padding-bottom: 42px !important;
+  }
+}
+</style>
 </head>
 <body class="antialiased">
 
