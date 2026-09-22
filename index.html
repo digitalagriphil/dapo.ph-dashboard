@@ -740,7 +740,6 @@ header > div {
       <a href="#crops" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_crops">Focus areas</a>
       <a href="#livestock" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_livestock">Livestock &amp; farmers</a>
       <a href="#innovations" class="hover:text-[#4C6B47] transition-colors" data-i18n="nav_innovations">Innovations</a>
-      <a href="#pitch" class="px-4 py-2 rounded-full bg-[#1F3327] text-[#EAF3E1] hover:bg-[#4C6B47] transition-colors" data-i18n="nav_pitch">Pitch an idea</a>
     </nav>
 
     <div class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -974,31 +973,6 @@ header > div {
   </div>
 </section>
 
-<section id="pitch" class="bg-[#1F3327] text-[#EAF3E1]">
-  <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid lg:grid-cols-2 gap-14">
-    <div>
-      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[#C99A3D] mb-4" data-i18n="pitch_eyebrow">Pitch an idea</p>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6" data-i18n="pitch_title">Got a solution farmers actually need?</h2>
-      <p class="text-[#EAF3E1]/75 leading-relaxed max-w-md" data-i18n="pitch_desc">We work with founders, researchers, and agri-tech students who have a working idea — a sensor, a model, a distribution channel — and want to test it with real cooperatives instead of a lab.</p>
-      <p class="text-[#EAF3E1]/50 text-sm mt-8" data-i18n-html="pitch_email_note_html">Prefer email? Write to <a href="mailto:pitch@digitalagri.ph" class="underline hover:text-[#C99A3D]">pitch@digitalagri.ph</a></p>
-    </div>
-    <form action="mailto:pitch@digitalagri.ph" method="post" enctype="text/plain" class="flex flex-col gap-4">
-      <div>
-        <label for="pitch-name" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_name_label">Name</label>
-        <input id="pitch-name" name="name" type="text" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="Juan Dela Cruz" data-i18n-placeholder="pitch_name_ph">
-      </div>
-      <div>
-        <label for="pitch-email" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_email_label">Email</label>
-        <input id="pitch-email" name="email" type="email" required class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="you@example.com" data-i18n-placeholder="pitch_email_ph">
-      </div>
-      <div>
-        <label for="pitch-idea" class="block text-xs font-mono uppercase tracking-wide text-[#EAF3E1]/60 mb-2" data-i18n="pitch_idea_label">Your idea</label>
-        <textarea id="pitch-idea" name="idea" required rows="4" class="w-full rounded-lg bg-[#EAF3E1]/10 border border-[#EAF3E1]/20 px-4 py-3 text-sm text-[#EAF3E1] placeholder-[#EAF3E1]/40 focus:outline-none focus:border-[#C99A3D]" placeholder="What problem does it solve, and for which farmers?" data-i18n-placeholder="pitch_idea_ph"></textarea>
-      </div>
-      <button type="submit" class="mt-2 px-6 py-3.5 rounded-full bg-[#C99A3D] text-[#1F3327] font-medium hover:bg-[#EAF3E1] transition-colors" data-i18n="pitch_submit">Send pitch</button>
-    </form>
-  </div>
-</section>
 
 <section id="contact" class="border-t border-[#1F3327]/10">
   <div class="max-w-6xl mx-auto px-6 md:px-10 py-24 md:py-28 grid md:grid-cols-2 gap-12 items-end">
@@ -1031,7 +1005,6 @@ header > div {
   </div>
   <div id="aiMessages" class="ai-messages" aria-live="polite"></div>
   <div id="aiQuestionList" class="ai-question-list">
-    <button type="button" class="ai-question" data-question="Do you have any project recommendations that you want to pitch?">Do you have any project recommendations that you want to pitch?</button>
     <button type="button" class="ai-question" data-question="Where does our company located">Where does our company located</button>
     <button type="button" class="ai-question" data-question="Any other questions?">Any other questions?</button>
   </div>
@@ -1052,7 +1025,7 @@ header > div {
 const translations = {
   en: {},
   tl: {
-    nav_work: "Ang aming ginagawa", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", nav_pitch: "Magmungkahi ng ideya", lang_label: "Wika",
+    nav_work: "Ang aming ginagawa", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", lang_label: "Wika",
     hero_title: "Binabasa namin ang lupa<br>para hindi na kailangang<br>manghula ng magsasaka.",
     hero_subtitle: "Ginagawa ng Digital Agriculture of the Philippines ang datos ng lupa, panahon, at merkado bilang mga desisyong maaaring kilos-agad ng magsasaka o kooperatiba bago pa man dumating ang susunod na taniman — hindi pagkatapos mawala ang ani.",
     hero_cta_partner: "Makipagtulungan sa amin", hero_cta_see: "Tingnan kung paano gumagana",
@@ -1083,18 +1056,13 @@ const translations = {
     innov2_tag: "Nasa bukid na", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid na estasyon ng lupa at panahon na ginawa para sa mga lugar na walang maaasahang kuryente, umuulat gamit ang low-bandwidth cellular connection.",
     innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubaybay ng produkto mula bukid hanggang mamimili para sa export-grade na mangga at niyog, nagbibigay sa maliliit na magsasaka ng patunay ng pinagmulan na sinusuklian ng mamimili ng dagdag na presyo.",
     innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
-    pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
-    pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
-    pitch_email_note_html: "Mas gusto ang email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Iyong ideya",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
     contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
     contact_desc: "Isang probinsya lang kami sa isang pagkakataon para manatiling tumpak ang mga modelo sa lupa at panahon doon. Sabihin sa amin kung saan ka nagsasaka at ano ang itinatanim mo.",
     contact_label: "Digital Agriculture of the Philippines OPC",
     footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika ng Pilipinas"
   },
   ceb: {
-    nav_work: "Among gibuhat", nav_crops: "Mga fokus", nav_livestock: "Kahayopan ug mag-uuma", nav_innovations: "Mga inobasyon", nav_pitch: "Isugyot ang ideya", lang_label: "Pinulongan",
+    nav_work: "Among gibuhat", nav_crops: "Mga fokus", nav_livestock: "Kahayopan ug mag-uuma", nav_innovations: "Mga inobasyon", lang_label: "Pinulongan",
     hero_title: "Among gibasa ang yuta<br>aron ang mag-uuma dili na<br>kinahanglan mag-ilog.",
     hero_subtitle: "Ang Digital Agriculture of the Philippines naghimo sa datos sa yuta, panahon, ug merkado nga mga desisyon nga mahimong buhaton sa mag-uuma o kooperatiba sa dili pa moabot ang sunod tanom — dili human na mawala ang ani.",
     hero_cta_partner: "Makig-partner kanamo", hero_cta_see: "Tan-awa ang proseso",
@@ -1125,18 +1093,13 @@ const translations = {
     innov2_tag: "Naa na sa uma", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid nga estasyon sa yuta ug panahon nga gihimo para sa mga lugar nga walay sigurado nga kuryente, nagreport gamit ang low-bandwidth cellular nga koneksyon.",
     innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubay sa produkto gikan sa uma hangtod sa mamalitay para sa export-grade nga mangga ug lubi, naghatag sa gagmay nga mag-uuma og pamatuod sa gigikanan nga gibayaran og dugang sa mamalitay.",
     innov4_tag: "Pilot pa", innov4_title: "Tambag pinaagi sa tingog", innov4_desc: "Usa ka call-in line para sa mag-uuma nga walay smartphone — pangutana sa Filipino o lokal nga diyalekto, ug makadawat og tubag base sa tinuod nga datos sa uma.",
-    pitch_eyebrow: "Isugyot ang ideya", pitch_title: "Naa ka bay solusyon nga tinuod nga gikinahanglan sa mag-uuma?",
-    pitch_desc: "Nagatrabaho kami uban sa mga founder, researcher, ug estudyante sa agri-tech nga adunay nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — ug gusto kining sulayan uban sa tinuod nga kooperatiba imbes sa laboratoryo.",
-    pitch_email_note_html: "Gusto mo og email? Sulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imong ideya",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Unsang problema ang gisulbad niini, ug para kang kinsa nga mag-uuma?", pitch_submit: "Ipadala ang sugyot",
     contact_title: "Nagatrabaho ka ba uban sa kooperatiba, LGU, ukon agribusiness?",
     contact_desc: "Usa ka probinsya sa usa ka higayon among gi-onboard aron magpabilin nga husto ang mga modelo sa maong yuta ug panahon. Sultihi kami kon asa ka nag-uma ug unsay imong gitanom.",
     contact_label: "Digital Agriculture of the Philippines OPC",
     footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika sa Pilipinas"
   },
   ilo: {
-    nav_work: "Ti ar-aramidenmi", nav_crops: "Dagiti fokus", nav_livestock: "Ayup ken mannalon", nav_innovations: "Dagiti inobasyon", nav_pitch: "Idatag ti idea", lang_label: "Pagsasao",
+    nav_work: "Ti ar-aramidenmi", nav_crops: "Dagiti fokus", nav_livestock: "Ayup ken mannalon", nav_innovations: "Dagiti inobasyon", lang_label: "Pagsasao",
     hero_title: "Ba-basaenmi ti daga<br>tapno saanen nga agisalsalimeteg<br>dagiti mannalon.",
     hero_subtitle: "Baliwan ti Digital Agriculture of the Philippines dagiti datos ti daga, tiempo, ken merkado a mausar a desision a mabalin nga aramiden ti mannalon wenno kooperatiba sakbay ti sumaruno a panagmula — saan a kalpasan a napukaw ti apit.",
     hero_cta_partner: "Makikadua kadakami", hero_cta_see: "Kitaen no kasano ti panagtrabaho",
@@ -1167,18 +1130,13 @@ const translations = {
     innov2_tag: "Adda iti talon", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid a estasion ti daga ken tiempo a naaramid para kadagiti lugar nga awan ti masarigan a kuryente, agi-report babaen ti low-bandwidth a cellular a koneksion.",
     innov3_tag: "Piloto pay laeng", innov3_title: "Blockchain traceability", innov3_desc: "Panagsubay ti produkto manipud iti talon agingga iti gumatang para iti export-grade a mangga ken niog, mangmangted kadagiti bassit a mannalon iti pammaneknek ti naggapuanna a bayadan ti gumatang iti nayon a bayad.",
     innov4_tag: "Piloto pay laeng", innov4_title: "Balakad babaen iti timek", innov4_desc: "Maysa a call-in line para kadagiti mannalon nga awan smartphone-na — agsaludsod iti Filipino wenno lokal a dialekto, ken umawat ti sungbat a naibatay iti pudno a datos ti talon.",
-    pitch_eyebrow: "Idatag ti idea", pitch_title: "Adda kadi solusion a pudno a kasapulan dagiti mannalon?",
-    pitch_desc: "Agtrabahokami kadagiti founder, researcher, ken estudiante ti agri-tech nga adda agtrabtrabaho nga ideana — sensor, modelo, wenno distribution channel — ken kayatna a suoten daytoy kadagiti pudno a kooperatiba imbes iti laboratorio.",
-    pitch_email_note_html: "Kayat mo nga email? Suraten idiay <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Nagan", pitch_email_label: "Email", pitch_idea_label: "Ideam",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "sika@example.com", pitch_idea_ph: "Ania ti problema a nalutlutuenna, ken para kadagiti ania a mannalon?", pitch_submit: "Ipatulod ti idatag",
     contact_title: "Agtrabtrabahoka kadi iti kooperatiba, LGU, wenno agribusiness?",
     contact_desc: "Maysa a probinsia iti maminsan ti onboardenmi tapno agtalinaed a husto dagiti modelo iti dayta a daga ken tiempo. Ibagam no sadino ti pagtaltalonam ken ania ti immulam.",
     contact_label: "Digital Agriculture of the Philippines OPC",
     footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Narehistro a One Person Corporation · Republika ti Filipinas"
   },
   bat: {
-    nav_work: "Ginagawa namin", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", nav_pitch: "Magmungkahi ng ideya", lang_label: "Wika",
+    nav_work: "Ginagawa namin", nav_crops: "Mga tinutukan", nav_livestock: "Hayop at magsasaka", nav_innovations: "Mga inobasyon", lang_label: "Wika",
     hero_title: "Binabasa namin ang lupa eh<br>para hindi na kailangang<br>manghula pa ang magsasaka.",
     hero_subtitle: "Ang Digital Agriculture of the Philippines eh ginagawang desisyon ang datos ng lupa, panahon, at merkado na magagamit agad ng magsasaka o kooperatiba bago pa dumating ang susunod na taniman — hindi pagkatapos mawala ang ani, eh.",
     hero_cta_partner: "Makipag-partner sa amin", hero_cta_see: "Tingnan kung paano gumagana",
@@ -1209,18 +1167,13 @@ const translations = {
     innov2_tag: "Nasa bukid na", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid na estasyon ng lupa at panahon na ginawa para sa mga lugar na walang maaasahang kuryente, umuulat gamit ang low-bandwidth cellular connection.",
     innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubaybay ng produkto mula bukid hanggang sa mamimili para sa export-grade na mangga at niyog, nagbibigay sa maliliit na magsasaka ng patunay ng pinagmulan na sinusuklian ng mamimili ng dagdag na presyo.",
     innov4_tag: "Pilot pa", innov4_title: "Payo sa pamamagitan ng boses", innov4_desc: "Isang call-in line para sa magsasakang walang smartphone — magtanong sa Filipino o lokal na diyalekto, at makatanggap ng sagot na batay sa aktwal na datos sa bukid.",
-    pitch_eyebrow: "Magmungkahi ng ideya", pitch_title: "May solusyon ka bang talagang kailangan ng magsasaka?",
-    pitch_desc: "Nakikipagtulungan kami sa mga founder, researcher, at estudyanteng agri-tech na may gumaganang ideya — sensor, modelo, o distribution channel — at gustong subukan ito kasama ang tunay na kooperatiba imbes na sa laboratoryo.",
-    pitch_email_note_html: "Mas gusto niyo ba email? Sumulat sa <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Pangalan", pitch_email_label: "Email", pitch_idea_label: "Ang ideya mo",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Anong problema ang nilulutas nito, at para kanino?", pitch_submit: "Ipadala ang mungkahi",
     contact_title: "Nakikipagtulungan ka ba sa isang kooperatiba, LGU, o agribusiness?",
     contact_desc: "Isang probinsya lang ang tinatanggap namin sa isang pagkakataon para manatiling tumpak ang mga modelo sa lupa at panahon doon. Sabihin niyo na lang sa amin kung saan kayo nagsasaka at ano ang itinatanim niyo.",
     contact_label: "Digital Agriculture of the Philippines OPC",
     footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistradong One Person Corporation · Republika ng Pilipinas"
   },
   hil: {
-    nav_work: "Ang amon ginahimo", nav_crops: "Mga fokus", nav_livestock: "Kasapatan kag mangunguma", nav_innovations: "Mga inobasyon", nav_pitch: "Isugyot ang ideya", lang_label: "Lenggwahe",
+    nav_work: "Ang amon ginahimo", nav_crops: "Mga fokus", nav_livestock: "Kasapatan kag mangunguma", nav_innovations: "Mga inobasyon", lang_label: "Lenggwahe",
     hero_title: "Ginabasa namon ang duta<br>agud indi na kinahanglan<br>mag-ilog ang mangunguma.",
     hero_subtitle: "Ginahimo sang Digital Agriculture of the Philippines ang datos sang duta, tiempo, kag merkado nga mga desisyon nga sarang mahimo sang mangunguma ukon kooperatiba sa wala pa mag-abot ang masunod nga pagtanom — indi pagkatapos madula ang ani.",
     hero_cta_partner: "Makig-partner sa amon", hero_cta_see: "Tan-awa kon paano ini nagatrabaho",
@@ -1251,18 +1204,13 @@ const translations = {
     innov2_tag: "Yara na sa uma", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid nga estasyon sang duta kag tiempo nga ginhimo para sa mga lugar nga wala sing masaligan nga kuryente, nagareport paagi sa low-bandwidth nga cellular nga koneksyon.",
     innov3_tag: "Pilot pa", innov3_title: "Blockchain traceability", innov3_desc: "Pagsubay sang produkto halin sa uma pakadto sa manugbakal para sa export-grade nga mangga kag lubi, nagahatag sa gagmay nga mangunguma sang pamatuod sang ginhalinan nga ginabayaran sang manugbakal sang dugang nga presyo.",
     innov4_tag: "Pilot pa", innov4_title: "Laygay paagi sa tingog", innov4_desc: "Isa ka call-in line para sa mangunguma nga wala sing smartphone — magpamangkot sa Filipino ukon lokal nga dialekto, kag makabaton sang sabat nga base sa matuod nga datos sang uma.",
-    pitch_eyebrow: "Isugyot ang ideya", pitch_title: "May solusyon ka bala nga matuod nga kinahanglan sang mangunguma?",
-    pitch_desc: "Nagatrabaho kami kaupod sang mga founder, researcher, kag estudyante sang agri-tech nga may nagatrabaho nga ideya — sensor, modelo, ukon distribution channel — kag gusto ini testingan kaupod sang matuod nga kooperatiba sa baylo sang laboratoryo.",
-    pitch_email_note_html: "Gusto mo bala email? Sulati ang <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Ngalan", pitch_email_label: "Email", pitch_idea_label: "Imo ideya",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ikaw@example.com", pitch_idea_ph: "Ano nga problema ang ginasolusyunan sini, kag para kay sin-o nga mangunguma?", pitch_submit: "Ipadala ang sugyot",
     contact_title: "Nagatrabaho ka bala kaupod sang kooperatiba, LGU, ukon agribusiness?",
     contact_desc: "Isa lang ka probinsya sa isa ka tion ang amon ginaonboard agud magpabilin nga husto ang mga modelo sa sina nga duta kag tiempo. Sugiri kami kon diin ka nagapanguma kag ano ang imo gina-tanom.",
     contact_label: "Digital Agriculture of the Philippines OPC",
     footer_copyright: "© 2026 Digital Agriculture of the Philippines OPC", footer_reg: "Rehistrado nga One Person Corporation · Republika sang Pilipinas"
   },
   pam: {
-    nav_work: "Ing gagawan mi", nav_crops: "Deng focus", nav_livestock: "Ayup at talapagobra", nav_innovations: "Deng inobasyon", nav_pitch: "Ibye ing idea", lang_label: "Amanu",
+    nav_work: "Ing gagawan mi", nav_crops: "Deng focus", nav_livestock: "Ayup at talapagobra", nav_innovations: "Deng inobasyon", lang_label: "Amanu",
     hero_title: "Babasan mi ing gabun<br>ban ali na kailangan<br>mamagulan ing talasaka.",
     hero_subtitle: "Ing Digital Agriculture of the Philippines mikagawa keng datos ning gabun, panaun, at merkadu deng desisyon a magagamit karas talasaka o kooperatiba bayu datang ing kasunuran a pamamula — ali kaibat mawala ing ani.",
     hero_cta_partner: "Makipag-partner kekami", hero_cta_see: "Lawan nung pano ya gagawa",
@@ -1293,11 +1241,6 @@ const translations = {
     innov2_tag: "Atiu king bukid", innov2_title: "Solar sensor stations", innov2_desc: "Off-grid a estasyon ning gabun at panaun a migawa para karing lugar a alang masaligan a koryente, mag-report gamit ing mababang-bandwidth a cellular a koneksyon.",
     innov3_tag: "Piloto pa", innov3_title: "Blockchain traceability", innov3_desc: "Pamanyubay king produktu manibat king bukid anggang king mamiaus para king export-grade a mangga at ngungut, mibibye karing malati a talasaka ning pamaneknek ning kayarian a babayaran deng mamiaus ning dagdag a bayad.",
     innov4_tag: "Piloto pa", innov4_title: "Pamagsabi liwat king voice", innov4_desc: "Metung yang call-in line para karing talasaka a alang smartphone — mitanong king Filipino o lokal a dialekto, at manalo yang sagut a base king tutuang datos king bukid.",
-    pitch_eyebrow: "Ibye ing idea", pitch_title: "Atin ka bang solusyon a tutu yang kailangan ning talasaka?",
-    pitch_desc: "Makikayabe kami karing founder, researcher, at estudyanteng agri-tech a atin gagawang idea — sensor, modelo, o distribution channel — at buri lang subukan ini kareng tutuang kooperatiba imbes king laboratoryo.",
-    pitch_email_note_html: "Buri mu email? Sulat king <a href=\"mailto:pitch@digitalagri.ph\" class=\"underline hover:text-[#C99A3D]\">pitch@digitalagri.ph</a>",
-    pitch_name_label: "Lagyu", pitch_email_label: "Email", pitch_idea_label: "Ing idea mu",
-    pitch_name_ph: "Juan Dela Cruz", pitch_email_ph: "ika@example.com", pitch_idea_ph: "Nanung problema ing sasabli na, at para karing nanung talasaka?", pitch_submit: "Ipadala ing pamagsulat",
     contact_title: "Makikayabe ka la keng kooperatiba, LGU, o agribusiness?",
     contact_desc: "Metung mung probinsya king metung a pagkakataon ing kekaming onboard ban mapanatili ing katutuan da reng modelo king dyan a gabun at panaun. Sabyan mu kekami nung nokarin ka nagobra at nanung mumula mu.",
     contact_label: "Digital Agriculture of the Philippines OPC",
@@ -1455,7 +1398,6 @@ const aiQuestionList = document.getElementById('aiQuestionList');
 let aiIdleTimer = null;
 
 const aiAnswers = {
-  "Do you have any project recommendations that you want to pitch?":
     "That's great! Kindly email us your portfolio here on digitalagriphil@gmail.com so that we can assess it and have a virtual meeting with you. We can't wait for your pitch!",
   "Where does our company located":
     "We're located in Balonbato, Quezon City.",
